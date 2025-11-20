@@ -23,4 +23,8 @@ public class Bag extends Items{
 		this.capacity = capacity;
 		this.items = new ArrayList<Items>();
 	}
+	
+	public void view(){
+		System.out.println(this.items);
+	}
 }

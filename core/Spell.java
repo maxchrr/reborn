@@ -7,6 +7,14 @@ public class Spell {
 	private int cost;
 	private SpellType type; 
 	
+	public String getName(){
+		return this.name;
+	}
+	
+	public String getDesc(){
+		return this.desc;
+	}
+	
 	public int getCost(){
 		return this.cost;
 	}

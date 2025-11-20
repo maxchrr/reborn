@@ -8,6 +8,10 @@ public class Exit{
 		return this.isAccessible;
 	}
 	
+	public Location getLocation() {
+		return this.location;
+	}
+	
 	public void changeStateOpen() {
 		this.isAccessible = true;
 	}

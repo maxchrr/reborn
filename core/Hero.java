@@ -20,7 +20,11 @@ public class Hero {
 	
 	public int getMana() {
 		return this.mana;	
-		}
+	}
+	
+	public Location getLocation() {
+		return this.currLocation;	
+	}
 	
 	public void restoreMana(int mana) {
 		this.mana += mana;
@@ -36,6 +40,10 @@ public class Hero {
 	
 	public void delHealth(int hp) {
 		this.hp -= hp;
+	}
+	
+	public void viewBag(){
+		this.bag.view();
 	}
 	
 	public void cast(Spell spell) {
