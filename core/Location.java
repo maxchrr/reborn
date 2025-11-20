@@ -3,8 +3,8 @@ package core;
 import java.util.List;
 
 public class Location {
-	private String name;
-	private String desc;
+	private final String NAME;
+	private final String DESC;
 	private List<Exit> exits;
 	private List<Items> items;
 	private List<Character> pnj;
