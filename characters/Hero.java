@@ -1,8 +1,14 @@
-package core;
+package characters;
 
 import java.util.List;
 
+import items.Bag;
+import locations.Location;
+import spells.Spell;
+import util.Writer;
+
 public class Hero {
+	private static Writer writer;
 	private int hp;
 	private int mana;
 	private Location currLocation;
@@ -26,6 +32,16 @@ public class Hero {
 		return this.currLocation;	
 	}
 	
+	public Hero(Writer writer, int hp, int mana, Location loc, boolean hasBag, Bag bag, List<Spell> spells) {
+		Hero.writer = writer;
+		this.hp = hp;
+		this.mana = mana;
+		this.currLocation = loc;
+		this.hasBag = hasBag;
+		this.bag = bag;
+		this.spells = spells;
+	}
+	
 	public void restoreMana(int mana) {
 		this.mana += mana;
 	}
@@ -42,14 +58,14 @@ public class Hero {
 		this.hp -= hp;
 	}
 	
-	public void viewBag(){
-		this.bag.view();
+	public void viewBag() {
+		//this.bag.use(Hero.writer);
 	}
 	
 	public void cast(Spell spell) {
 		if(spell.getCost() > this.mana)
-			System.out.println("Not enough mana !");
+			Hero.writer.display("Not enough mana !");
 		else 
-			spell.action(spell, this);
+			spell.action(Hero.writer, spell, this);
 	}
 }

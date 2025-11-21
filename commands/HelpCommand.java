@@ -23,18 +23,18 @@ public class HelpCommand implements Command {
 	public void execute(Writer writer, String[] args) {
 		if (args.length == 0) {
             // List all commands
-            System.out.println("Available commands:");
+            writer.display("Available commands:");
             for (Command cmd : manager.getCommands().values()) {
-                System.out.printf(" - %-10s : %s%n", cmd.getName(), cmd.getDescription());
+                writer.display(String.format(" - %-10s : %s%n", cmd.getName(), cmd.getDescription()));
             }
         } else {
             // Show detailed help for one command
             String cmdName = args[0].toLowerCase();
             Command cmd = manager.getCommands().get(cmdName);
             if (cmd != null) {
-                System.out.printf("%nCommand: %s%nDescription: %s%n", cmd.getName(), cmd.getDescription());
+                writer.display(String.format("%nCommand: %s%nDescription: %s%n", cmd.getName(), cmd.getDescription()));
             } else {
-                System.out.println("Unknown command: " + cmdName);
+                writer.display("Unknown command: " + cmdName);
             }
         }
 	}

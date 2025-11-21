@@ -1,6 +1,6 @@
-package core;
+package locations;
 
-public class Exit{
+public class Exit {
 	private boolean isAccessible;
 	private Location location;
 	

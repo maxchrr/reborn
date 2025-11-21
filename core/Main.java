@@ -25,7 +25,7 @@ public class Main {
         manager.register(new TalkCommand());
         manager.register(new UseCommand());
 
-        writer.debug("Command handler ready. Type 'help' to list commands.");
+        writer.debug("Command handler ready.");
         
         writer.display("Welcome to our incredible Java game!");
 		writer.display("Enter 'START' to start this awesome aventure");
