@@ -1,6 +1,6 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
 
 public class HelpCommand implements Command {
 	private final CommandManager manager;
@@ -11,32 +11,31 @@ public class HelpCommand implements Command {
 
 	@Override
 	public String getName() {
-		return "help";
+		return "HELP";
 	}
 
 	@Override
 	public String getDescription() {
-		return "indicates the set of availaible commands.";
+		return "Indicates the set of availaible commands.";
 	}
 
 	@Override
-	public void execute(Writer writer, String[] args) {
+	public void execute(Hero hero, String[] args) {
 		if (args.length == 0) {
             // List all commands
-            writer.display("Available commands:");
+            hero.getWriter().display("Available commands:");
             for (Command cmd : manager.getCommands().values()) {
-                writer.display(String.format(" - %-10s : %s%n", cmd.getName(), cmd.getDescription()));
+                hero.getWriter().display(String.format(" - %-10s : %s%n", cmd.getName(), cmd.getDescription()));
             }
         } else {
             // Show detailed help for one command
             String cmdName = args[0].toLowerCase();
             Command cmd = manager.getCommands().get(cmdName);
             if (cmd != null) {
-                writer.display(String.format("%nCommand: %s%nDescription: %s%n", cmd.getName(), cmd.getDescription()));
+                hero.getWriter().display(String.format("%nCommand: %s%nDescription: %s%n", cmd.getName(), cmd.getDescription()));
             } else {
-                writer.display("Unknown command: " + cmdName);
+                hero.getWriter().display("Unknown command: " + cmdName);
             }
         }
 	}
-
 }

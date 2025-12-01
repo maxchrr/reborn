@@ -1,22 +1,22 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
 
 public class QuitCommand implements Command {
 
 	@Override
 	public String getName() {
-		return "quit";
+		return "QUIT";
 	}
 
 	@Override
 	public String getDescription() {
-		return "quit the game.";
+		return "Quit the game.";
 	}
 
 	@Override
-	public void execute(Writer writer, String[] args) {
-		writer.display("Goodbye!");
+	public void execute(Hero hero, String[] args) {
+		hero.getWriter().display("Goodbye!");
 		System.exit(0);
 	}
 

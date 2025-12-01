@@ -1,22 +1,22 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
 
 public class StartCommand implements Command {
 
 	@Override
 	public String getName() {
-		return "start";
+		return "START";
 	}
 
 	@Override
 	public String getDescription() {
-		return "start the game.";
+		return "Start the game.";
 	}
 
 	@Override
-	public void execute(Writer writer, String[] args) {
-		writer.display("It's cold and still inside the spaceship. As you land, "
+	public void execute(Hero hero, String[] args) {
+		hero.getWriter().display("It's cold and still inside the spaceship. As you land, "
 				+ "everything seems lifeless, a grey fog covers March, the before "
 				+ "known capital of Vow.");
 	}

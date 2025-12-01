@@ -1,21 +1,21 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
 
 public class TalkCommand implements Command {
 
 	@Override
 	public String getName() {
-		return "talk";
+		return "TALK";
 	}
 
 	@Override
 	public String getDescription() {
-		return "talk to a character.";
+		return "Talk to a character.";
 	}
 
 	@Override
-	public void execute(Writer writer, String[] args) {
+	public void execute(Hero hero, String[] args) {
 		// TODO Auto-generated method stub
 
 	}

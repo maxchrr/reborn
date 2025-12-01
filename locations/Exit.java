@@ -1,22 +1,27 @@
 package locations;
 
 public class Exit {
-	private boolean isAccessible;
-	private Location location;
+	private final Location target;
+	private boolean accessible;
 	
-	public boolean getState() {
-		return this.isAccessible;
+	public Location getTarget() {
+		return this.target;
 	}
 	
-	public Location getLocation() {
-		return this.location;
+	public boolean isAccessible() {
+		return this.accessible;
 	}
 	
 	public void changeStateOpen() {
-		this.isAccessible = true;
+		this.accessible = true;
 	}
 	
 	public void changeStateClosed() {
-		this.isAccessible = false;
-	}	
+		this.accessible = false;
+	}
+	
+	public Exit(Location target) {
+		this.target = target;
+		changeStateOpen();
+	}
 }

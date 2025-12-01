@@ -1,29 +1,17 @@
 package locations;
 
-import java.util.List;
+import java.util.Map;
 
-import items.Item;
-
-public class Location {
-	private final String NAME;
-	private final String DESC;
-	private List<Exit> exits;
-	private List<Item> items;
-	private List<Character> pnj;
-	
-	public String getName() {
-		return this.NAME;
-	}
-		
-	public String getDesc() {
-		return this.DESC;
-	}
-	
-	public Location(String name, String desc, List<Exit> exits, List<Item> items, List<Character> characters) {
-		this.NAME = name;
-		this.DESC = desc;
-		this.exits = exits;	
-		this.items = items;
-		this.pnj = characters;
-	}
+/**
+ * Represents a single location.
+ */
+public interface Location {
+	/** The name used of the location (e.g., "Spaceship"). */
+    String getName();
+    
+    /** A short description of the location. */
+    String getDescription();
+    
+    /** A dictionary of all the possible Exits */
+    Map<String, Exit> getExits();
 }

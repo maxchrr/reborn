@@ -1,4 +1,4 @@
-package characters;
+package core;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ public class Hero {
 	private Bag bag;
 	private List<Spell> spells;
 	
-	public boolean hasBag() {
-		return this.hasBag;
+	public Writer getWriter() {
+		return Hero.writer;
 	}
 	
 	public int getHealth() {
@@ -32,6 +32,22 @@ public class Hero {
 		return this.currLocation;	
 	}
 	
+	public boolean hasBag() {
+		return this.hasBag;
+	}
+	
+	public Bag getBag() {
+		if (hasBag()) {
+			return bag;
+		} else {
+			return null;
+		}
+	}
+	
+	public List<Spell> getSpells() {
+		return spells;
+	}
+	
 	public Hero(Writer writer, int hp, int mana, Location loc, boolean hasBag, Bag bag, List<Spell> spells) {
 		Hero.writer = writer;
 		this.hp = hp;
@@ -40,6 +56,10 @@ public class Hero {
 		this.hasBag = hasBag;
 		this.bag = bag;
 		this.spells = spells;
+	}
+	
+	public void move(Location location) {
+		currLocation = location;
 	}
 	
 	public void restoreMana(int mana) {

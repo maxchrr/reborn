@@ -3,6 +3,7 @@ package commands;
 import java.util.HashMap;
 import java.util.Map;
 
+import core.Hero;
 import util.Writer;
 
 /**
@@ -16,24 +17,24 @@ public class CommandManager {
      * @param command the Command object to register
      */
     public void register(Command command) {
-        commands.put(command.getName().toLowerCase(), command);
+        commands.put(command.getName().toUpperCase(), command);
     }
 
     /**
      * Executes a command based on user input.
      * @param input the full line typed by the user
      */
-    public void handle(Writer writer, String input) {
+    public void handle(Writer writer, Hero hero, String input) {
         if (input == null || input.isBlank()) return;
 
         String[] parts = input.trim().split("\\s+");
-        String name = parts[0].toLowerCase();
+        String name = parts[0].toUpperCase();
         String[] args = new String[Math.max(0, parts.length - 1)];
         System.arraycopy(parts, 1, args, 0, args.length);
 
         Command command = commands.get(name);
         if (command != null) {
-            command.execute(writer, args);
+            command.execute(hero, args);
         } else {
             writer.debug("Unknown command: " + name);
         }

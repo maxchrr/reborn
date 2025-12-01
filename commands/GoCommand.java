@@ -1,25 +1,36 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
+import locations.BaseLocation;
+import locations.Exit;
 
 public class GoCommand implements Command {
 	
     @Override
     public String getName() {
-        return "go";
+        return "GO";
     }
 
     @Override
     public String getDescription() {
-        return "the GO command is followed by the name of the neighbor location the\n"
+        return "The GO command is followed by the name of the neighbor location the\n"
         		+ "player wants to go. In case the location exists and the exit can be crossed, the hero\n"
         		+ "goes there, otherwise he stays in the same room. In each case, a display will indicate\n"
         		+ "what happens.";
     }
 
-    @Override
-    public void execute(Writer writer, String[] args) {
-    	// TODO Auto-generated method stub
-    	
-    }
+	@Override
+	public void execute(Hero hero, String[] args) {
+		if (args.length < 1) return;
+		
+		BaseLocation currentLocation = (BaseLocation) hero.getLocation();
+		Exit exit = currentLocation.getExits().get(args[0].toLowerCase());
+		if (exit != null && exit.isAccessible()) {
+			BaseLocation targetLocation = (BaseLocation) exit.getTarget();
+			hero.move(targetLocation);
+			hero.getWriter().display("Moving to " + targetLocation.getName());
+		} else {
+			hero.getWriter().display("I cant't move there...");
+		}
+	}
 }

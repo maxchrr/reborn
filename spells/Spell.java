@@ -1,6 +1,6 @@
 package spells;
 
-import characters.Hero;
+import core.Hero;
 import util.Writer;
 
 public class Spell {

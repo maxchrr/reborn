@@ -1,6 +1,6 @@
 package commands;
 
-import util.Writer;
+import core.Hero;
 
 /**
  * Represents a single console command.
@@ -13,5 +13,5 @@ public interface Command {
     String getDescription();
 
     /** Executes the command with any provided arguments. */
-	void execute(Writer writer, String[] args);
+	void execute(Hero hero, String[] args);
 }

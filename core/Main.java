@@ -3,6 +3,7 @@ package core;
 import java.util.Scanner;
 
 import commands.*;
+import locations.*;
 import util.Writer;
 
 /**
@@ -27,6 +28,13 @@ public class Main {
 
         writer.debug("Command handler ready.");
         
+        // Initialize the World
+        World world = new World();
+        Location current = world.startingLocation;
+        
+        // Initialize the Hero on starting location
+        Hero hero = new Hero(writer, 100, 100, current, false, null, null);
+        
         writer.display("Welcome to our incredible Java game!");
 		writer.display("Enter 'START' to start this awesome aventure");
 
@@ -34,7 +42,7 @@ public class Main {
         while (true) {
             System.out.print("> ");
             String input = scanner.nextLine();
-            manager.handle(writer, input);
+            manager.handle(writer, hero, input);
         }
 	}
 }
