@@ -1,27 +1,31 @@
 package items;
 
-import util.Writer;
+import core.Hero;
+import locations.BaseLocation;
 
-public abstract class Item {
-	private final String NAME;
-	private final String DESC;
-	
-	public String getName() {
-		return this.NAME;
-	}
-	
-	public String getDesc() {
-		return this.DESC;
-	}
-	
-	public Item(String name, String desc) {
-		this.NAME = name;
-		this.DESC = desc;		
-	}
-	
-	public abstract void use(Writer writer, String[] args);
-	
-	public String toString(){
-		return getName();
-	}
+/**
+ * Represents a single item.
+ */
+public interface Item {
+	/** The name of the item */
+    String getName();
+    
+    /** A short description of the item. */
+    String getDescription();
+    
+    /** When an item is taken. */
+    boolean onTake(Hero hero, BaseLocation location);
+    
+    /** When an item is dropped. */
+    boolean onDrop(Hero hero, BaseLocation location);
+    
+    /** Use this item single. */
+    default void onUse(Hero hero) {
+    	hero.getWriter().display("I can't use this.");
+    }
+    
+    /** Use this item together. */
+    default void onUseWith(Hero hero, Item other) {
+    	hero.getWriter().display("These two things can't be used together.");
+    }
 }

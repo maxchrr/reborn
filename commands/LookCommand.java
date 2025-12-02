@@ -1,6 +1,8 @@
 package commands;
 
+import characters.Character;
 import core.Hero;
+import items.Item;
 import locations.BaseLocation;
 import locations.Exit;
 
@@ -13,17 +15,36 @@ public class LookCommand implements Command {
 
 	@Override
 	public String getDescription() {
-		return "Displays a description of the current location if no argument\n"
-				+ "is given. In case a list of arguments is provided, a display of all arguments that can\n"
-				+ "be observed is given.";
+		return "Display everything that can be observed in the current location.";
 	}
 
 	@Override
 	public void execute(Hero hero, String[] args) {
-		BaseLocation currentLocation = (BaseLocation) hero.getLocation();
+		if (args.length == 1 && args[0].equalsIgnoreCase("Bag")) {
+			if (!hero.hasBag()) {
+				hero.getWriter().display("I don't have a bag.");
+				return;
+			}
+			
+			hero.getBag().onUse(hero);
+			return;
+		}
+		
+		hero.getWriter().display("Exits: ");
+		BaseLocation currentLocation = hero.getLocation();
 		for (Exit exit : currentLocation.getExits().values()) {
-			BaseLocation exitLocation = (BaseLocation) exit.getTarget();
+			BaseLocation exitLocation = exit.getTarget();
 			hero.getWriter().display(exit.isAccessible() ? exitLocation.getName() : "");
+		}
+		
+		hero.getWriter().display("\nItems: ");
+		for (Item item : currentLocation.getItems()) {
+			hero.getWriter().display(item.getName());
+		}
+		
+		hero.getWriter().display("\nCharacters: ");
+		for (Character character : currentLocation.getCharacters()) {
+			hero.getWriter().display(character.getName());
 		}
 	}
 

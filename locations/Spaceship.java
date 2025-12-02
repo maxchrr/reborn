@@ -18,9 +18,10 @@ public class Spaceship extends BaseLocation {
 		super();
 		
 		// All items in the location
-		Bag bag = new Bag("Bag", "A bag, ripped of on its side but that can still hold few objects.", 10);
+		Bag bag = new Bag(10);
 		this.getItems().add(bag);
 		
 		// All spells in the location
+		//Spell heal = new Spell("Heal", "", 20, 40, SpellType.HEAL);
 	}
 }

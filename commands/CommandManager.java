@@ -28,15 +28,17 @@ public class CommandManager {
         if (input == null || input.isBlank()) return;
 
         String[] parts = input.trim().split("\\s+");
-        String name = parts[0].toUpperCase();
+        String commandName = parts[0].toUpperCase();
         String[] args = new String[Math.max(0, parts.length - 1)];
         System.arraycopy(parts, 1, args, 0, args.length);
+        
+        if (!hero.hasStarted() && !commandName.equals("START")) return;
 
-        Command command = commands.get(name);
+        Command command = commands.get(commandName);
         if (command != null) {
             command.execute(hero, args);
         } else {
-            writer.debug("Unknown command: " + name);
+            writer.debug("Unknown command: " + commandName);
         }
     }
     

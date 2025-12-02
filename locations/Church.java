@@ -4,7 +4,7 @@ public class Church extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Church";
 	}
 
 	@Override

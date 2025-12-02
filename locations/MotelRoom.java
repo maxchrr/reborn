@@ -4,7 +4,7 @@ public class MotelRoom extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "MotelRoom";
 	}
 
 	@Override

@@ -16,6 +16,7 @@ public class QuitCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
+		hero.setStarted(false);
 		hero.getWriter().display("Goodbye!");
 		System.exit(0);
 	}

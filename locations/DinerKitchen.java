@@ -4,7 +4,7 @@ public class DinerKitchen extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "DinerKitchen";
 	}
 
 	@Override

@@ -1,11 +1,11 @@
 package locations;
 
 public class Exit {
-	private final Location target;
+	private final BaseLocation TARGET;
 	private boolean accessible;
 	
-	public Location getTarget() {
-		return this.target;
+	public BaseLocation getTarget() {
+		return this.TARGET;
 	}
 	
 	public boolean isAccessible() {
@@ -20,8 +20,8 @@ public class Exit {
 		this.accessible = false;
 	}
 	
-	public Exit(Location target) {
-		this.target = target;
+	public Exit(BaseLocation target) {
+		this.TARGET = target;
 		changeStateOpen();
 	}
 }

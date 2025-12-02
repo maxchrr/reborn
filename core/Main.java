@@ -17,6 +17,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		// Register commands
+		manager.register(new DropCommand());
         manager.register(new GoCommand());
         manager.register(new HelpCommand(manager));
         manager.register(new LookCommand());
@@ -26,14 +27,18 @@ public class Main {
         manager.register(new TalkCommand());
         manager.register(new UseCommand());
 
-        writer.debug("Command handler ready.");
+        writer.debug("Command handler ready");
         
         // Initialize the World
         World world = new World();
-        Location current = world.startingLocation;
+        BaseLocation current = world.startingLocation;
+        
+        writer.debug("World ready");
         
         // Initialize the Hero on starting location
         Hero hero = new Hero(writer, 100, 100, current, false, null, null);
+        
+        writer.debug("Hero ready");
         
         writer.display("Welcome to our incredible Java game!");
 		writer.display("Enter 'START' to start this awesome aventure");

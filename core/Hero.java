@@ -3,18 +3,23 @@ package core;
 import java.util.List;
 
 import items.Bag;
-import locations.Location;
+import locations.BaseLocation;
 import spells.Spell;
 import util.Writer;
 
 public class Hero {
+	private boolean started;
 	private static Writer writer;
 	private int hp;
 	private int mana;
-	private Location currLocation;
+	private BaseLocation currLocation;
 	private boolean hasBag;
 	private Bag bag;
 	private List<Spell> spells;
+	
+	public boolean hasStarted() {
+		return started;
+	}
 	
 	public Writer getWriter() {
 		return Hero.writer;
@@ -28,12 +33,17 @@ public class Hero {
 		return this.mana;	
 	}
 	
-	public Location getLocation() {
+	public BaseLocation getLocation() {
 		return this.currLocation;	
 	}
 	
 	public boolean hasBag() {
 		return this.hasBag;
+	}
+	
+	public void setBag(Bag bag) {
+	    this.bag = bag;
+	    this.hasBag = (bag != null);
 	}
 	
 	public Bag getBag() {
@@ -48,7 +58,7 @@ public class Hero {
 		return spells;
 	}
 	
-	public Hero(Writer writer, int hp, int mana, Location loc, boolean hasBag, Bag bag, List<Spell> spells) {
+	public Hero(Writer writer, int hp, int mana, BaseLocation loc, boolean hasBag, Bag bag, List<Spell> spells) {
 		Hero.writer = writer;
 		this.hp = hp;
 		this.mana = mana;
@@ -58,16 +68,8 @@ public class Hero {
 		this.spells = spells;
 	}
 	
-	public void move(Location location) {
-		currLocation = location;
-	}
-	
-	public void restoreMana(int mana) {
-		this.mana += mana;
-	}
-	
-	public void useMana(int mana) {
-		this.mana -= mana;
+	public void setStarted(boolean value) {
+		this.started = value;
 	}
 	
 	public void addHealth(int hp) {
@@ -78,14 +80,28 @@ public class Hero {
 		this.hp -= hp;
 	}
 	
+	public void restoreMana(int mana) {
+		this.mana += mana;
+	}
+	
+	public void useMana(int mana) {
+		this.mana -= mana;
+	}
+	
+	public void move(BaseLocation location) {
+		currLocation = location;
+	}
+	
 	public void viewBag() {
-		//this.bag.use(Hero.writer);
+		if (this.hasBag) {
+			//this.bag;
+		}
 	}
 	
 	public void cast(Spell spell) {
 		if(spell.getCost() > this.mana)
-			Hero.writer.display("Not enough mana !");
+			Hero.writer.display("Not enough mana!");
 		else 
-			spell.action(Hero.writer, spell, this);
+			spell.action(this, spell);
 	}
 }

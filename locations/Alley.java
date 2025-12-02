@@ -4,7 +4,7 @@ public class Alley extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Alley";
 	}
 
 	@Override

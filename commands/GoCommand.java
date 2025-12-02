@@ -29,6 +29,7 @@ public class GoCommand implements Command {
 			BaseLocation targetLocation = (BaseLocation) exit.getTarget();
 			hero.move(targetLocation);
 			hero.getWriter().display("Moving to " + targetLocation.getName());
+			hero.getWriter().display(targetLocation.getDescription());
 		} else {
 			hero.getWriter().display("I cant't move there...");
 		}

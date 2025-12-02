@@ -1,14 +1,13 @@
 package spells;
 
 import core.Hero;
-import util.Writer;
 
 public class Spell {
 	private String name;
 	private String desc;
 	private int value;
 	private int cost;
-	private SpellType type; 
+	private SpellType type;
 	
 	public String getName() {
 		return this.name;
@@ -18,12 +17,12 @@ public class Spell {
 		return this.desc;
 	}
 	
-	public int getCost() {
-		return this.cost;
-	}
-	
 	public int getValue() {
 		return this.value;
+	}
+	
+	public int getCost() {
+		return this.cost;
 	}
 	
 	public SpellType getType() {
@@ -38,29 +37,24 @@ public class Spell {
 		this.type = type;
 	}
 	
-	public void action(Writer writer, Spell spell, Hero hero) {
+	public void action(Hero hero, Spell spell) {
+		hero.useMana(spell.cost);
 		switch(spell.type) {
 		case BUBBLES:
-			hero.useMana(spell.cost);
-			writer.display("｡.°˚∘˙○˚.•｡˚𓈒𓏸.°•○");
+			hero.getWriter().display("｡.°˚∘˙○˚.•｡˚𓈒𓏸.°•○");
 			break;
 		case HEAL:
-			hero.useMana(spell.cost);
 			hero.addHealth(value);
 			break;
 		case SIXTHSENSE:
-			hero.useMana(spell.cost);
 			// show one of the exits
 			break;
 		case RADIOCALL:
-			hero.useMana(spell.cost);
 			// show a list of Locations between you and the spaceship
 			break;
 		case ENFORCER:
-			hero.useMana(spell.cost);
 			// breaks a door that normally needs an opener 
 			break;
 		}
-		
 	}
 }

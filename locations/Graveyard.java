@@ -4,7 +4,7 @@ public class Graveyard extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Graveyard";
 	}
 
 	@Override

@@ -11,10 +11,13 @@ public class World {
     public MotelEntry motelEntry;
     public MotelRoom motelRoom;
     public Street2 street2;
+    public Kebab kebab;
     public Church church;
     public Alley alley;
     public Diner diner;
     public DinerKitchen dinerKitchen;
+    public StrangeOffice strangeOffice;
+    public Backrooms backrooms;
     public BrokenAlley brokenAlley;
     public Graveyard graveyard;
     public PoliceStation policeStation;
@@ -24,7 +27,7 @@ public class World {
     public Tunnel tunnel;
     public River river;
     
-    public Location startingLocation;
+    public BaseLocation startingLocation;
 
     public World() {
         spaceship  	  = new Spaceship();
@@ -35,10 +38,13 @@ public class World {
         motelEntry    = new MotelEntry();
         motelRoom     = new MotelRoom();
         street2       = new Street2();
+        kebab         = new Kebab();
         church        = new Church();
         alley         = new Alley();
         diner      	  = new Diner();
         dinerKitchen  = new DinerKitchen();
+        strangeOffice = new StrangeOffice();
+        backrooms     = new Backrooms();
         brokenAlley   = new BrokenAlley();
         graveyard     = new Graveyard();
         policeStation = new PoliceStation();
@@ -52,6 +58,7 @@ public class World {
 
         street1.addExit(spaceship);
         street1.addExit(pub);
+        street1.addExit(crossroads);
 
         pub.addExit(street1);
         
@@ -59,6 +66,8 @@ public class World {
         crossroads.addExit(church);
         crossroads.addExit(street2);
         crossroads.addExit(motel);
+        
+        church.addExit(crossroads);
         
         motel.addExit(crossroads);
         motel.addExit(motelEntry);
@@ -69,18 +78,25 @@ public class World {
         motelRoom.addExit(motel);
         
         street2.addExit(crossroads);
+        street2.addExit(kebab);
         street2.addExit(alley);
         street2.addExit(brokenAlley);
         
-        church.addExit(crossroads);
+        kebab.addExit(street2);
         
         alley.addExit(street2);
         alley.addExit(diner);
         
-        diner.addExit(dinerKitchen);
         diner.addExit(alley);
+        diner.addExit(dinerKitchen);
+        diner.addExit(strangeOffice);
         
         dinerKitchen.addExit(diner);
+        
+        strangeOffice.addExit(diner);
+        strangeOffice.addExit(backrooms);
+        
+        backrooms.addExit(strangeOffice);
         
         brokenAlley.addExit(street2);
         brokenAlley.addExit(policeStation);
@@ -104,7 +120,6 @@ public class World {
         tunnel.addExit(park);
         
         river.addExit(park);
-        
         
         startingLocation = spaceship;
     }

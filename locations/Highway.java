@@ -4,7 +4,7 @@ public class Highway extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Highway";
 	}
 
 	@Override

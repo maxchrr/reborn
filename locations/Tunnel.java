@@ -4,7 +4,7 @@ public class Tunnel extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Tunnel";
 	}
 
 	@Override

@@ -4,7 +4,7 @@ public class Cell extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Pub";
+		return "Cell";
 	}
 
 	@Override
