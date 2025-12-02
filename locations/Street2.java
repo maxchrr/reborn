@@ -4,12 +4,12 @@ public class Street2 extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Street2";
+		return "OrdinaryStreet";
 	}
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "Another foggy street, this time with a stronger fog, could there be exits I don't see ?";
 	}
 	
 	public Street2() {

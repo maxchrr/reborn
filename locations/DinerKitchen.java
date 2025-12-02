@@ -9,7 +9,7 @@ public class DinerKitchen extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "A basic kitchen, everything is cleaned, like we had to leave in a hurry...";
 	}
 	
 	public DinerKitchen() {

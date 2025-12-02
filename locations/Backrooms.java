@@ -9,8 +9,8 @@ public class Backrooms extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "What is this place? Did I just noclip out of reality?";
+		
 	}
 
 }

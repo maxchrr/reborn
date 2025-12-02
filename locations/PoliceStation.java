@@ -1,5 +1,7 @@
 package locations;
 
+import items.MagicWand;
+
 public class PoliceStation extends BaseLocation {
 
 	@Override
@@ -9,14 +11,15 @@ public class PoliceStation extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "I am pleased no one is there, or am I ?";
 	}
 	
 	public PoliceStation() {
 		super();
 		
 		// All items in the location
-		
+		MagicWand magicWand = new MagicWand();
+		this.getItems().add(magicWand);
 		// All spells in the location
 	}
 }

@@ -2,6 +2,8 @@ package locations;
 
 import items.Bag;
 
+import spells.*;
+
 public class Spaceship extends BaseLocation {
 
 	@Override
@@ -22,6 +24,6 @@ public class Spaceship extends BaseLocation {
 		this.getItems().add(bag);
 		
 		// All spells in the location
-		//Spell heal = new Spell("Heal", "", 20, 40, SpellType.HEAL);
+		Spell heal = new Spell("Heal", "Heals 20 missing hero HP.", 20, 40, SpellType.HEAL);
 	}
 }

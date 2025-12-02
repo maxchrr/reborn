@@ -1,5 +1,7 @@
 package locations;
 
+import items.Sword;
+
 public class Crossroads extends BaseLocation {
 
 	@Override
@@ -9,14 +11,15 @@ public class Crossroads extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "An intersection, the street lights are still working, many exits from there";
 	}
 	
 	public Crossroads() {
 		super();
 		
 		// All items in the location
-		
+		Sword sword = new Sword();
+		this.getItems().add(sword);
 		// All spells in the location
 	}
 }

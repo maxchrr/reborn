@@ -9,7 +9,7 @@ public class Cell extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "A rusty cell, maybe someone was there and escaped, maybe not, only the bars know";
 	}
 	
 	public Cell() {

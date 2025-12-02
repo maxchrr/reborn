@@ -1,5 +1,7 @@
 package locations;
 
+import items.Apple;
+
 public class MotelEntry extends BaseLocation {
 
 	@Override
@@ -9,14 +11,15 @@ public class MotelEntry extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return " 'Maple's motel : welcome home !' Quite welcoming I must say, even though no one is there.";
 	}
 	
 	public MotelEntry() {
 		super();
 		
 		// All items in the location
-		
+		Apple apple = new Apple();
+		this.getItems().add(apple);
 		// All spells in the location
 	}
 }

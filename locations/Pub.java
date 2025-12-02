@@ -1,6 +1,7 @@
 package locations;
 
 import items.Key1;
+import items.Soda;
 
 public class Pub extends BaseLocation {
 
@@ -20,6 +21,8 @@ public class Pub extends BaseLocation {
 		// All items in the location
 		Key1 key1 = new Key1();
 		this.getItems().add(key1);
+		Soda soda = new Soda();
+		this.getItems().add(soda);
 		
 		// All spells in the location
 	}

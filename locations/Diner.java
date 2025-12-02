@@ -4,12 +4,12 @@ public class Diner extends BaseLocation {
 
 	@Override
 	public String getName() {
-		return "Diner";
+		return "DinerEntry";
 	}
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "The main room of the restaurant, with a litlle bell that rings when someone enters";
 	}
 	
 	public Diner() {

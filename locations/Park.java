@@ -9,7 +9,7 @@ public class Park extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "A park with half of the games almost destroyed, I can guess with childrens wouldn't come here.";
 	}
 	
 	public Park() {

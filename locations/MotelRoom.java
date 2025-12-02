@@ -9,7 +9,7 @@ public class MotelRoom extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return "An elderly decorated room with dust on its furniture.";
 	}
 	
 	public MotelRoom() {

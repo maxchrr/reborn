@@ -1,14 +1,14 @@
 package items;
 
-public class Key1 extends ItemBase {
+public class Apple extends ItemBase {
 
 	@Override
 	public String getName() {
-		return "Key";
+		return "Apple";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Unlocks something near the first street.";
+		return "A fresh and juicy apple.";
 	}
 }

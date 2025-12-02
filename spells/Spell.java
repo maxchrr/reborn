@@ -46,7 +46,7 @@ public class Spell {
 		case HEAL:
 			hero.addHealth(value);
 			break;
-		case SIXTHSENSE:
+		case SIXTHSENCE:
 			// show one of the exits
 			break;
 		case RADIOCALL:

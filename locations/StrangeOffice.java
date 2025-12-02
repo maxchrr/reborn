@@ -9,8 +9,7 @@ public class StrangeOffice extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "An office, the more I look at it, the less sense it...makes? Why is this Closet so big?";
 	}
 
 }

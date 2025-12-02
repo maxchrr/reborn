@@ -9,7 +9,7 @@ public class BrokenAlley extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return "A pub with everything thrown down, something happened there before the event";
+		return	"A broken street with a red car on the side of the road";
 	}
 	
 	public BrokenAlley() {

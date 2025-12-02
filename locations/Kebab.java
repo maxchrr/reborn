@@ -1,5 +1,7 @@
 package locations;
 
+import items.KebabItem;
+
 public class Kebab extends BaseLocation {
 
 	@Override
@@ -9,8 +11,15 @@ public class Kebab extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "DONER KEBAB, why is there a kebab opened in such a place ?";
 	}
 
+	public Kebab() {
+		super();
+		
+		// All items in the location
+		KebabItem kebab = new KebabItem();
+		this.getItems().add(kebab);
+		// All spells in the location
+	}
 }
