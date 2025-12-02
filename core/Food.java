@@ -1,5 +1,7 @@
 package core;
 
+import characters.Character;
+
 public class Food {
 	private int heal;
 	
@@ -12,7 +14,7 @@ public class Food {
 	}
 	
 	public void use(Hero hero){
-		hero.restoreHp(this.heal);
+		hero.addHealth(this.heal);
 	}
 	
 	

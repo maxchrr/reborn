@@ -1,5 +1,7 @@
 package core;
 
+import characters.Character;
+
 public class Weapon{
 	private int atk;
 	
@@ -8,7 +10,7 @@ public class Weapon{
 	}
 	
 	public void use(Character pnj){
-		pnj.looseHp(this.atk);
+		pnj.dealDamage(this.atk);
 	}
 	
 	public Weapon(int atk){

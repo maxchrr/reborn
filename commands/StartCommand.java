@@ -17,9 +17,11 @@ public class StartCommand implements Command {
 	@Override
 	public void execute(Hero hero, String[] args) {
 		hero.setStarted(true);
-		hero.getWriter().display("It's cold and still inside the spaceship. As you land, "
-				+ "everything seems lifeless, a grey fog covers March, the before "
-				+ "known capital of Vow.");
+		hero.getWriter().display("Year : 3625" 
+				+ "Destination : NEUTRA\r\n"
+				+ "Population : unknown \r\n"
+				+ "That's it, you feel quite anxious, thus you are more curious than ever to discover what happened."
+				+ "Everyone seems to have disappear and you have one objective : find the reason and, if you can, fin them back.");
 	}
 
 }
