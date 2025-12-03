@@ -1,0 +1,11 @@
+/Command.class
+/CommandManager.class
+/DropCommand.class
+/GoCommand.class
+/HelpCommand.class
+/LookCommand.class
+/QuitCommand.class
+/StartCommand.class
+/TakeCommand.class
+/TalkCommand.class
+/UseCommand.class
