@@ -10,6 +10,7 @@ import util.Writer;
  * Handles command registration and execution.
  */
 public class CommandManager {
+	
     private final Map<String, Command> commands = new HashMap<>();
     
     /**
@@ -29,12 +30,17 @@ public class CommandManager {
 
         String[] parts = input.trim().split("\\s+");
         String commandName = parts[0].toUpperCase();
-        String[] args = new String[Math.max(0, parts.length - 1)];
-        System.arraycopy(parts, 1, args, 0, args.length);
         
+        String[] args = new String[Math.max(0, parts.length - 1)];
+        if (args.length > 0) {
+        	System.arraycopy(parts, 1, args, 0, args.length);
+        }
+        
+        // Prevent commands before START
         if (!hero.hasStarted() && !commandName.equals("START")) return;
 
         Command command = commands.get(commandName);
+        
         if (command != null) {
             command.execute(hero, args);
         } else {
