@@ -23,14 +23,14 @@ public class GoCommand implements Command {
 	public void execute(Hero hero, String[] args) {
 		if (args.length < 1) return;
 		
-		LocationBase currentLocation = (LocationBase) hero.getLocation();
+		LocationBase currentLocation = hero.getLocation();
 		Exit exit = currentLocation.getExits().get(args[0].toLowerCase());
 		if (exit != null && exit.isAccessible()) {
-			LocationBase targetLocation = (LocationBase) exit.getTarget();
+			LocationBase targetLocation = exit.getTarget();
 			hero.move(targetLocation);
 			hero.getWriter().display("Moving to " + targetLocation.getName());
 			hero.getWriter().display(targetLocation.getDescription());
-<<<<<<< HEAD
+
 			if (targetLocation.getName().equalsIgnoreCase("StrangeOffice")) {
 				hero.getWriter().display("You enter the locked office, everything seems untouched.\n"
 						+ "Everything looks normal until you spot something strange.\n "
@@ -41,8 +41,6 @@ public class GoCommand implements Command {
 						+ "Thanks for playing!\n");
 				System.exit(0);
 			}
-=======
->>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 		} else {
 			hero.getWriter().display("I cant't move there...");
 		}

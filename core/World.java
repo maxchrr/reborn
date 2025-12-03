@@ -71,11 +71,7 @@ public class World {
         
         motel.addExit(crossroads);
         motel.addExit(motelEntry);
-<<<<<<< HEAD
         motel.addExit(motelRoom, false);
-=======
-        motel.addExit(motelRoom);
->>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
         
         motelEntry.addExit(motel);
         
@@ -100,23 +96,15 @@ public class World {
         strangeOffice.addExit(diner);
         strangeOffice.addExit(backrooms);
         
-        backrooms.addExit(strangeOffice);
+        backrooms.addExit(strangeOffice, false);
         
         brokenAlley.addExit(street2);
         brokenAlley.addExit(policeStation);
-<<<<<<< HEAD
         brokenAlley.addExit(graveyard, false);
         brokenAlley.addExit(park);
         
         policeStation.addExit(brokenAlley);
         policeStation.addExit(cell, false);
-=======
-        brokenAlley.addExit(graveyard);
-        brokenAlley.addExit(park);
-        
-        policeStation.addExit(brokenAlley);
-        policeStation.addExit(cell);
->>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
         
         cell.addExit(policeStation);
 

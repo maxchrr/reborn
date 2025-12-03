@@ -1,18 +1,17 @@
 package characters;
 
+/**
+ * Represents a single character.
+ */
 public interface Character {
-
 	/** The name of the character */
 	public String getName();
 	
+	/** The description by the hero of the character */
+	public String getDescription();
+	
 	/** The health of the character */
 	public int getHealth();
-
-	/** The max health of the character */
-	public int getHealthMax(); 
-	
-	/** The description by the hero of the character */
-	public String getDesc();
 
 	/** The sentences said by the character when command TALK is used on them */
 	public String talkInteraction();
