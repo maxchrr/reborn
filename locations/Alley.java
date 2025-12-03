@@ -1,6 +1,6 @@
 package locations;
 
-import items.Key2;
+import items.RustyKey;
 import spells.Spell;
 import spells.SpellType;
 
@@ -21,8 +21,8 @@ public class Alley extends LocationBase {
 		super();
 		
 		// Items in the location
-		Key2 key2 = new Key2();
-		this.getItems().add(key2);
+		RustyKey rustyKey = new RustyKey();
+		this.getItems().add(rustyKey);
 		
 		// Spell in the location
 		this.spell = new Spell("SixthSence", "Shows the content of a nearby Location.", 0, 50, SpellType.SIXTHSENCE);

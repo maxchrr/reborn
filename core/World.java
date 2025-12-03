@@ -4,13 +4,13 @@ import locations.*;
 
 public class World {
     public Spaceship spaceship;
-    public Street1 street1;
+    public MulburryStreet street1;
     public Pub pub;
     public Crossroads crossroads;
     public Motel motel;
     public MotelEntry motelEntry;
     public MotelRoom motelRoom;
-    public Street2 street2;
+    public OrdinaryStreet street2;
     public Kebab kebab;
     public Church church;
     public Alley alley;
@@ -31,13 +31,13 @@ public class World {
 
     public World() {
         spaceship  	  = new Spaceship();
-        street1    	  = new Street1();
+        street1    	  = new MulburryStreet();
         pub        	  = new Pub();
         crossroads 	  = new Crossroads();
         motel         = new Motel();
         motelEntry    = new MotelEntry();
         motelRoom     = new MotelRoom();
-        street2       = new Street2();
+        street2       = new OrdinaryStreet();
         kebab         = new Kebab();
         church        = new Church();
         alley         = new Alley();
