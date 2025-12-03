@@ -1,18 +1,18 @@
 package locations;
 
-public class Street2 extends LocationBase {
+public class MulburryStreet extends LocationBase {
 
 	@Override
 	public String getName() {
-		return "OrdinaryStreet";
+		return "MulburryStreet";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Another foggy street, this time with a stronger fog, could there be exits I don't see ?";
+		return "A foggy street, nobody is there.";
 	}
-	
-	public Street2() {
+
+	public MulburryStreet() {
 		super();
 		
 		// All items in the location

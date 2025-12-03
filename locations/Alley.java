@@ -1,6 +1,6 @@
 package locations;
 
-import items.Key2;
+import items.RustyKey;
 import spells.Spell;
 import spells.SpellType;
 
@@ -21,7 +21,7 @@ public class Alley extends LocationBase {
 		super();
 		
 		// All items in the location
-		Key2 key2 = new Key2();
+		RustyKey key2 = new RustyKey();
 		this.getItems().add(key2);
 		
 		// All spells in the location

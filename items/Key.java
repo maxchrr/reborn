@@ -1,6 +1,6 @@
 package items;
 
-public class Key1 extends ItemBase {
+public class Key extends ItemBase {
 
 	@Override
 	public String getName() {

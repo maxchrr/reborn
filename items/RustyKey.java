@@ -1,6 +1,6 @@
 package items;
 
-public class Key2 extends ItemBase {
+public class RustyKey extends ItemBase {
 
 	@Override
 	public String getName() {

@@ -1,6 +1,6 @@
 package locations;
 
-import items.Key1;
+import items.Key;
 import items.Soda;
 
 public class Pub extends LocationBase {
@@ -19,7 +19,7 @@ public class Pub extends LocationBase {
 		super();
 		
 		// All items in the location
-		Key1 key1 = new Key1();
+		Key key1 = new Key();
 		Soda soda = new Soda();
 		this.getItems().add(key1);
 		this.getItems().add(soda);
