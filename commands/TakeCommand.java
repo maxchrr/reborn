@@ -17,26 +17,28 @@ public class TakeCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
-		if (args.length < 1) return;
+		if (args.length == 0) return;
 		
 		String itemName = args[0];
-		var locItems = hero.getLocation().getItems();
-		Item found = null;
+		var locationItems = hero.getLocation().getItems();
 		
-		for (Item item : locItems) {
+		// Search for the item in the current location
+		Item itemToTake = null;
+		for (Item item : locationItems) {
 			if (item.getName().equalsIgnoreCase(itemName)) {
-				found = item;
+				itemToTake = item;
 				break;
 			}
 		}
 		
-		if (found == null) {
+		if (itemToTake == null) {
 			hero.getWriter().display("There's no " + itemName + " here.");
 	        return;
 		}
 		
-		boolean removed = found.onTake(hero, hero.getLocation());
-		if (removed) locItems.remove(found);
+		if (itemToTake.onTake(hero, hero.getLocation())) {
+			locationItems.remove(itemToTake);
+		}
 	}
 
 }

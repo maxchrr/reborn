@@ -21,21 +21,28 @@ public class HelpCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
+		// Case: HELP -> list all commands
 		if (args.length == 0) {
-            // List all commands
             hero.getWriter().display("Available commands:");
+            
             for (Command cmd : manager.getCommands().values()) {
-                hero.getWriter().display(String.format(" - %-10s : %s%n", cmd.getName(), cmd.getDescription()));
+                hero.getWriter().display(
+                		" - " + cmd.getName() + " : " + cmd.getDescription()
+                );
             }
-        } else {
-            // Show detailed help for one command
-            String cmdName = args[0].toLowerCase();
-            Command cmd = manager.getCommands().get(cmdName);
+            return;
+        }
+		
+		// Case: HELP <command> -> detailed help
+		String cmdName = args[0].toLowerCase();
+		Command cmd = manager.getCommands().get(cmdName);
             if (cmd != null) {
-                hero.getWriter().display(String.format("%nCommand: %s%nDescription: %s%n", cmd.getName(), cmd.getDescription()));
+                hero.getWriter().display(
+                		"\nCommand: " + cmd.getName() +
+                		"\nDescription: " + cmd.getDescription() + "\n"
+                );
             } else {
                 hero.getWriter().display("Unknown command: " + cmdName);
             }
-        }
 	}
 }

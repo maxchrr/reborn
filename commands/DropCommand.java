@@ -18,7 +18,7 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(Hero hero, String[] args) {
-        if (args.length < 1) return;
+        if (args.length == 0) return;
         
         if (!hero.hasBag()) {
             hero.getWriter().display("I don't have a bag.");
@@ -26,35 +26,34 @@ public class DropCommand implements Command {
         }
         
         String itemName = args[0];
-        Bag heroBag = hero.hasBag() ? hero.getBag() : null;;
-        if (heroBag == null) return;
-        var locItems = hero.getLocation().getItems();
-        Item found = null;
+        Bag heroBag = hero.getBag();
+        var locationItems = hero.getLocation().getItems();
         
+        // Special case: dropping the bag itself
         if (itemName.equalsIgnoreCase("Bag")) {
-            boolean allowed = heroBag.onDrop(hero, hero.getLocation());
-            if (allowed) locItems.add(heroBag);
- 
+            if (heroBag.onDrop(hero, hero.getLocation())) {
+            	locationItems.add(heroBag);
+            }
             return;
         }
 
+        // Find the item in the bag
+        Item itemToDrop = null;
         for (Item item : heroBag.getItems()) {
             if (item.getName().equalsIgnoreCase(itemName)) {
-                found = item;
+                itemToDrop = item;
                 break;
             }
         }
 
-        if (found == null) {
+        if (itemToDrop == null) {
             hero.getWriter().display("I don't have this item in my bag.");
             return;
         }
 
-        boolean allowed = found.onDrop(hero, hero.getLocation());
-
-        if (allowed) {
-        	heroBag.removeItem(found);
-        	locItems.add(found);
+        if (itemToDrop.onDrop(hero, hero.getLocation())) {
+        	heroBag.removeItem(itemToDrop);
+        	locationItems.add(itemToDrop);
         }
     }
 }

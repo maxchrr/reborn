@@ -18,30 +18,35 @@ public class TalkCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
-		if (args.length < 1) return;
+		if (args.length == 0) return;
 		
-		String characterName = args[0];
+		String inputName = args[0];
+		String normalizedName =
+				inputName.substring(0, 1).toUpperCase() +
+				inputName.substring(1).toLowerCase();
+		
 		LocationBase currentLocation = hero.getLocation();
-		if (currentLocation.hasCharacter()) {
-			String interaction = currentLocation.getCharacter().talkInteraction();
-			hero.getWriter().display(characterName + "\n" + interaction + "\n");
-			
-			switch(characterName) {
-				case "Ghost" :
-				case "OldLady" :
-				{
-					if (hero.getLocation().hasSpell()) {
-						Spell newSpell = hero.getLocation().getSpell();
-						hero.addSpell(newSpell);
-						hero.getWriter().display("You unlocked the " 
-								+ newSpell.getName()
-								+ " spell : \n"
-								+ newSpell.getDesc() 
-								+ "\n");
-					}
-					break;
+		if (!currentLocation.hasCharacter()) return;
+		
+		// Show character's dialogue
+		String interaction = currentLocation.getCharacter().talkInteraction();
+		hero.getWriter().display(normalizedName + ": " + interaction);
+		
+		// Characters that give a spell
+		switch(inputName.toUpperCase()) {
+			case "GHOST" :
+			case "OLDLADY" :
+				if (currentLocation.hasSpell()) {
+					Spell newSpell = currentLocation.getSpell();
+					hero.addSpell(newSpell);
+					hero.getWriter().display("You unlocked the " 
+							+ newSpell.getName()
+							+ " spell : \n"
+							+ newSpell.getDesc() 
+							+ "\n");
 				}
-			}
+				break;
 		}
+
 	}
 }

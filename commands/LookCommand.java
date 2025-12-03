@@ -19,33 +19,36 @@ public class LookCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
+		// Case: LOOK Bag
 		if (args.length == 1 && args[0].equalsIgnoreCase("Bag")) {
 			if (!hero.hasBag()) {
 				hero.getWriter().display("I don't have a bag.");
 				return;
 			}
-			
 			hero.getBag().onUse(hero);
 			return;
 		}
 		
-		hero.getWriter().display("Exits: ");
 		LocationBase currentLocation = hero.getLocation();
+		
+		// Exits
+		hero.getWriter().display("Exits: ");
 		for (Exit exit : currentLocation.getExits().values()) {
-			LocationBase exitLocation = exit.getTarget();
 			if (exit.isAccessible()) {
-				hero.getWriter().display(exitLocation.getName());
+				hero.getWriter().display(" - " + exit.getTarget().getName());
 			}
 		}
 		
+		// Items
 		hero.getWriter().display("\nItems: ");
 		for (Item item : currentLocation.getItems()) {
-			hero.getWriter().display(item.getName());
+			hero.getWriter().display(" - " + item.getName());
 		}
 		
+		// Character
 		if (currentLocation.hasCharacter()) {
 			hero.getWriter().display("\nCharacter: ");
-			hero.getWriter().display(currentLocation.getCharacter().getName());
+			hero.getWriter().display(" - " + currentLocation.getCharacter().getName());
 		}
 	}
 

@@ -19,9 +19,11 @@ public class UseCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
-		if (args.length < 1) return;
+		if (args.length == 0) return;
 		
-		Item item1 = findItem(hero, args[0]);
+		String name1 = args[0];
+		Item item1 = findItem(hero, name1);
+		
 		if (item1 == null) {
 			hero.getWriter().display("I don't have " + args[0] + ".");
             return;
@@ -34,7 +36,9 @@ public class UseCommand implements Command {
 		}
 		
 		// USE <item1> <item2>
-		Item item2 = findItem(hero, args[1]);
+		String name2 = args[1];
+		Item item2 = findItem(hero, name2);
+		
         if (item2 == null) {
             hero.getWriter().display("I don't have " + args[1] + ".");
             return;
@@ -43,17 +47,20 @@ public class UseCommand implements Command {
         item1.onUseWith(hero, item2);
 	}
 
+	// Search for an item in the bag (including the bag itself)
 	private Item findItem(Hero hero, String name) {
-		if (hero.hasBag()) {
-			for (Item item : hero.getBag().getItems()) {
-				if (item.getName().equalsIgnoreCase(name)) {
-					return item;
-				}
-			}
+		if (!hero.hasBag()) return null;
+		
+		// Bag itself
+		if (name.equalsIgnoreCase("Bag")) {
+			return hero.getBag();
 		}
 		
-		if (hero.hasBag() && name.equalsIgnoreCase("Bag")) {
-			return hero.getBag();
+		// Items inside the bag
+		for (Item item : hero.getBag().getItems()) {
+			if (item.getName().equalsIgnoreCase(name)) {
+				return item;
+			}
 		}
 		
 		return null;
