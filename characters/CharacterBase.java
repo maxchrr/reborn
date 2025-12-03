@@ -24,12 +24,22 @@ public abstract class CharacterBase implements Character {
 
 	@Override
 	public String getDesc() {
+<<<<<<< HEAD
 		return this.desc;
+=======
+		// TODO Auto-generated method stub
+		return null;
+>>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 	}
 
 	@Override
 	public String talkInteraction() {
+<<<<<<< HEAD
 		return this.talkDesc;
+=======
+		// TODO Auto-generated method stub
+		return null;
+>>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 	}
 
 	@Override

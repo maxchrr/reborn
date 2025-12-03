@@ -1,7 +1,10 @@
 package commands;
 
 import core.Hero;
+<<<<<<< HEAD
 import spells.Spell;
+=======
+>>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 
 public class TalkCommand implements Command {
 
@@ -17,6 +20,7 @@ public class TalkCommand implements Command {
 
 	@Override
 	public void execute(Hero hero, String[] args) {
+<<<<<<< HEAD
 		if (args.length < 1) return;
 		
 		String characterName = args[0];
@@ -38,4 +42,10 @@ public class TalkCommand implements Command {
 			}
 		}
 	}
+=======
+		// TODO Auto-generated method stub
+
+	}
+
+>>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 }

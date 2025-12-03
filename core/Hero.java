@@ -58,10 +58,13 @@ public class Hero {
 		return spells;
 	}
 	
+<<<<<<< HEAD
 	public void addSpell(Spell spell) {
 		this.spells.add(spell);
 	}
 	
+=======
+>>>>>>> 80d0d43acbe1aec01582d8cdaf592eb30c64fa3c
 	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag, List<Spell> spells) {
 		Hero.writer = writer;
 		this.hp = hp;
