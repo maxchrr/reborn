@@ -1,35 +1,22 @@
 package characters;
 
-public class Character {
-	private String name;
-	private int health;
-	private int healthMax;
+public interface Character {
 
-	public String getName() {
-		return name;
-	}
+	/** The name of the character */
+	public String getName();
+	
+	/** The health of the character */
+	public int getHealth();
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	/** The max health of the character */
+	public int getHealthMax(); 
 	
-	public int getHealth() {
-		return this.health;
-	}
-	
-	public int getHealthMax() {
-		return this.healthMax;
-	}
-	
-	public void restoreHp(int value) {
-		if ((this.health + value) > this.healthMax)
-			this.health = this.healthMax;
-		else this.health += value;
-	}
-	
-	public void dealDamage(int value) {
-		if ((this.health - value) <= 0)
-			System.out.println(this.getName() + " is dead.");
-		else this.health -= value;
-	}
+	/** The description by the hero of the character */
+	public String getDesc();
+
+	/** The sentences said by the character when command TALK is used on them */
+	public String talkInteraction();
+
+	/** The damage dealt by a character to another */
+	public void dealDamage(Character character, int value);
 }
