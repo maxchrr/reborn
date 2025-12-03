@@ -24,4 +24,9 @@ public class Exit {
 		this.TARGET = target;
 		changeStateOpen();
 	}
+	
+	public Exit(LocationBase target, boolean state) {
+		this.TARGET = target;
+		this.accessible = state;
+	}
 }
