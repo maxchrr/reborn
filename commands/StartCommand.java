@@ -17,11 +17,11 @@ public class StartCommand implements Command {
 	@Override
 	public void execute(Hero hero, String[] args) {
 		hero.setStarted(true);
-		hero.getWriter().display("Year : 3625" 
-				+ "Destination : NEUTRA\r\n"
-				+ "Population : unknown \r\n"
-				+ "That's it, you feel quite anxious, thus you are more curious than ever to discover what happened."
-				+ "Everyone seems to have disappear and you have one objective : find the reason and, if you can, fin them back.");
+		hero.getWriter().display("Year : 3625\n" 
+				+ "Destination : NEUTRA \n"
+				+ "Population : unknown \n"
+				+ "That's it, you feel quite anxious, thus you are more curious than ever to discover what happened.\n"
+				+ "Everyone seems to have disappear and you have one objective : find the reason and, if you can, fin them back.\n");
 	}
 
 }

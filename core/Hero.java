@@ -47,7 +47,7 @@ public class Hero {
 	}
 	
 	public Bag getBag() {
-		if (hasBag()) {
+		if (this.hasBag()) {
 			return bag;
 		} else {
 			return null;
@@ -58,6 +58,10 @@ public class Hero {
 		return spells;
 	}
 	
+	public void addSpell(Spell spell) {
+		this.spells.add(spell);
+	}
+
 	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag, List<Spell> spells) {
 		Hero.writer = writer;
 		this.hp = hp;

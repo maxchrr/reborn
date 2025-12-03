@@ -12,7 +12,7 @@ import spells.Spell;
 public abstract class LocationBase implements Location {
 	private final Map<String, Exit> EXITS = new HashMap<>();
 	private final List<Item> ITEMS = new ArrayList<>();
-	private final List<Character> CHARACTERS = new ArrayList<>();
+	protected Character character = null;
 	protected Spell spell = null;
 	
 	@Override
@@ -24,15 +24,23 @@ public abstract class LocationBase implements Location {
 		return this.ITEMS;
 	}
 	
-	public List<Character> getCharacters() {
-		return this.CHARACTERS;
+	public boolean hasCharacter() {
+		return this.character != null;
+	}
+	
+	public Character getCharacter() {
+		if (this.hasCharacter()) {
+			return this.character;
+		} else {
+			return null;
+		}
 	}
 	
 	public boolean hasSpell() {
 		return this.spell != null;
 	}
 	
-	public Spell getSPell() {
+	public Spell getSpell() {
 		if (this.hasSpell()) {
 			return this.spell;
 		} else {

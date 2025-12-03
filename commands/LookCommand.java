@@ -1,6 +1,5 @@
 package commands;
 
-import characters.Character;
 import core.Hero;
 import items.Item;
 import locations.LocationBase;
@@ -42,9 +41,9 @@ public class LookCommand implements Command {
 			hero.getWriter().display(item.getName());
 		}
 		
-		hero.getWriter().display("\nCharacters: ");
-		for (Character character : currentLocation.getCharacters()) {
-			hero.getWriter().display(character.getName());
+		if (currentLocation.hasCharacter()) {
+			hero.getWriter().display("\nCharacter: ");
+			hero.getWriter().display(currentLocation.getCharacter().getName());
 		}
 	}
 
