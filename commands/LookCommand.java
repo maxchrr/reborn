@@ -33,7 +33,9 @@ public class LookCommand implements Command {
 		LocationBase currentLocation = hero.getLocation();
 		for (Exit exit : currentLocation.getExits().values()) {
 			LocationBase exitLocation = exit.getTarget();
-			hero.getWriter().display(exit.isAccessible() ? exitLocation.getName() : "");
+			if (exit.isAccessible()) {
+				hero.getWriter().display(exitLocation.getName());
+			}
 		}
 		
 		hero.getWriter().display("\nItems: ");

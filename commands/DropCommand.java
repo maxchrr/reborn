@@ -26,7 +26,8 @@ public class DropCommand implements Command {
         }
         
         String itemName = args[0];
-        Bag heroBag = hero.getBag();
+        Bag heroBag = hero.hasBag() ? hero.getBag() : null;;
+        if (heroBag == null) return;
         var locItems = hero.getLocation().getItems();
         Item found = null;
         

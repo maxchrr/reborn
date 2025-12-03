@@ -31,4 +31,9 @@ public abstract class ItemBase implements Item {
 	public void onUse(Hero hero) {
 		hero.getWriter().display("Nothing happens.");
 	}
+	
+	@Override
+	public void onUseWith(Hero hero, Item other) {
+		hero.getWriter().display("Nothing happens.");
+	}
 }
