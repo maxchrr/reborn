@@ -1,5 +1,6 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import items.Bag;
@@ -15,7 +16,7 @@ public class Hero {
 	private LocationBase currLocation;
 	private boolean hasBag;
 	private Bag bag;
-	private List<Spell> spells;
+	private final List<Spell> SPELLS = new ArrayList<>();
 	
 	public boolean hasStarted() {
 		return started;
@@ -48,28 +49,27 @@ public class Hero {
 	
 	public Bag getBag() {
 		if (this.hasBag()) {
-			return bag;
+			return this.bag;
 		} else {
 			return null;
 		}
 	}
 	
 	public List<Spell> getSpells() {
-		return spells;
+		return this.SPELLS;
 	}
 	
 	public void addSpell(Spell spell) {
-		this.spells.add(spell);
+		this.SPELLS.add(spell);
 	}
 
-	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag, List<Spell> spells) {
+	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag) {
 		Hero.writer = writer;
 		this.hp = hp;
 		this.mana = mana;
 		this.currLocation = loc;
 		this.hasBag = hasBag;
 		this.bag = bag;
-		this.spells = spells;
 	}
 	
 	public void setStarted(boolean value) {
