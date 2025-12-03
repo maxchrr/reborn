@@ -17,5 +17,5 @@ public interface Character {
 	public String talkInteraction();
 
 	/** The damage dealt by a character to another */
-	public void dealDamage(Character character, int value);
+	//public void dealDamage(Character character, int value);
 }

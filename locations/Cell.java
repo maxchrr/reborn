@@ -1,5 +1,7 @@
 package locations;
 
+import characters.Ghost;
+
 public class Cell extends LocationBase {
 
 	@Override
@@ -15,8 +17,11 @@ public class Cell extends LocationBase {
 	public Cell() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		
-		// All spells in the location
+		// Spell in the location
+		
+		// Character in the location
+		this.character = new Ghost();
 	}
 }
