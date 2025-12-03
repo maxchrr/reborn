@@ -11,7 +11,7 @@ public class MotelEntry extends BaseLocation {
 
 	@Override
 	public String getDescription() {
-		return " 'Maple's motel : welcome home !' Quite welcoming I must say, even though no one is there.";
+		return "'Maple's motel : welcome home!' Quite welcoming I must say, even though no one is there.";
 	}
 	
 	public MotelEntry() {
@@ -20,6 +20,7 @@ public class MotelEntry extends BaseLocation {
 		// All items in the location
 		Apple apple = new Apple();
 		this.getItems().add(apple);
+		
 		// All spells in the location
 	}
 }

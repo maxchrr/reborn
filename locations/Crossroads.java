@@ -20,6 +20,7 @@ public class Crossroads extends BaseLocation {
 		// All items in the location
 		Sword sword = new Sword();
 		this.getItems().add(sword);
+		
 		// All spells in the location
 	}
 }

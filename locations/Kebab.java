@@ -20,6 +20,7 @@ public class Kebab extends BaseLocation {
 		// All items in the location
 		KebabItem kebab = new KebabItem();
 		this.getItems().add(kebab);
+		
 		// All spells in the location
 	}
 }

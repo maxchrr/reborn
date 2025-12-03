@@ -1,7 +1,8 @@
 package locations;
 
 import items.Key2;
-import spells.*;
+import spells.Spell;
+import spells.SpellType;
 
 
 public class Alley extends BaseLocation {
@@ -22,7 +23,8 @@ public class Alley extends BaseLocation {
 		// All items in the location
 		Key2 key2 = new Key2();
 		this.getItems().add(key2);
+		
 		// All spells in the location
-		Spell sixthSence = new Spell("SixthSence", "Shows the content of a nearby Location.", 0, 50, SpellType.SIXTHSENCE);
+		this.spell = new Spell("SixthSence", "Shows the content of a nearby Location.", 0, 50, SpellType.SIXTHSENCE);
 	}
 }

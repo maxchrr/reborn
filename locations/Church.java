@@ -1,10 +1,9 @@
 package locations;
 
 import items.ManaPotion;
+import spells.Spell;
+import spells.SpellType;
 import items.Bullets;
-import spells.*;
-
-
 
 public class Church extends BaseLocation {
 
@@ -23,10 +22,11 @@ public class Church extends BaseLocation {
 		
 		// All items in the location
 		ManaPotion manaPotion = new ManaPotion();
-		this.getItems().add(manaPotion);
 		Bullets mag = new Bullets();
+		this.getItems().add(manaPotion);
 		this.getItems().add(mag);
+		
 		// All spells in the location
-		Spell radioCall = new Spell("RadioCall", "Gives a way to the spaceship.", 0, 40, SpellType.RADIOCALL);
+		this.spell = new Spell("RadioCall", "Gives a way to the spaceship.", 0, 40, SpellType.RADIOCALL);
 	}
 }

@@ -20,6 +20,7 @@ public class PoliceStation extends BaseLocation {
 		// All items in the location
 		MagicWand magicWand = new MagicWand();
 		this.getItems().add(magicWand);
+		
 		// All spells in the location
 	}
 }

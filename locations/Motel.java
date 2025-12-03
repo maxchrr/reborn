@@ -20,6 +20,7 @@ public class Motel extends BaseLocation {
 		// All items in the location
 		HpPotion hpPotion = new HpPotion();
 		this.getItems().add(hpPotion);
+		
 		// All spells in the location
 	}
 }

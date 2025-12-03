@@ -1,6 +1,7 @@
 package locations;
 
-import spells.*;
+import spells.Spell;
+import spells.SpellType;
 
 public class Tunnel extends BaseLocation {
 
@@ -20,6 +21,6 @@ public class Tunnel extends BaseLocation {
 		// All items in the location
 		
 		// All spells in the location
-		Spell bubbles = new Spell("Bubbles", "Cast bubbles to keep a sense of humanity.", 0, 10, SpellType.BUBBLES);
+		this.spell = new Spell("Bubbles", "Cast bubbles to keep a sense of humanity.", 0, 10, SpellType.BUBBLES);
 	}
 }

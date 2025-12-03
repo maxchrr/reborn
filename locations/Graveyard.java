@@ -20,6 +20,7 @@ public class Graveyard extends BaseLocation {
 		// All items in the location
 		Gun gun = new Gun();
 		this.getItems().add(gun);
+		
 		// All spells in the location
 	}
 }

@@ -20,6 +20,7 @@ public class River extends BaseLocation {
 		// All items in the location
 		RustyAmulet rustyAmulet = new RustyAmulet();
 		this.getItems().add(rustyAmulet);
+		
 		// All spells in the location
 	}
 }

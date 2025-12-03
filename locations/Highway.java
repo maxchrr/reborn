@@ -1,6 +1,7 @@
 package locations;
 
-import spells.*;
+import spells.Spell;
+import spells.SpellType;
 
 public class Highway extends BaseLocation {
 
@@ -20,6 +21,6 @@ public class Highway extends BaseLocation {
 		// All items in the location
 		
 		// All spells in the location
-		Spell enforcer = new Spell("Enforcer", "Opens a door using your HUGE muscles.", 0, 70, SpellType.ENFORCER);
+		this.spell = new Spell("Enforcer", "Opens a door using your HUGE muscles.", 0, 70, SpellType.ENFORCER);
 	}
 }
