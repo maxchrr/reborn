@@ -13,4 +13,13 @@ public class Backrooms extends LocationBase {
 		
 	}
 
+	public Backrooms() {
+		super();
+		
+		// Items in the location
+		
+		// Spell in the location
+				
+		// Character in the location
+	}
 }

@@ -15,8 +15,10 @@ public class DinerKitchen extends LocationBase {
 	public DinerKitchen() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

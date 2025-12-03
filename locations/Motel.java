@@ -17,10 +17,12 @@ public class Motel extends LocationBase {
 	public Motel() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		HpPotion hpPotion = new HpPotion();
 		this.getItems().add(hpPotion);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

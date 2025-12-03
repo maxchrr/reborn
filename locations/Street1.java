@@ -15,8 +15,10 @@ public class Street1 extends LocationBase {
 	public Street1() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

@@ -17,10 +17,12 @@ public class PoliceStation extends LocationBase {
 	public PoliceStation() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		MagicWand magicWand = new MagicWand();
 		this.getItems().add(magicWand);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

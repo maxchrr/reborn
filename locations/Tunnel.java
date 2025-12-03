@@ -18,9 +18,11 @@ public class Tunnel extends LocationBase {
 	public Tunnel() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		
-		// All spells in the location
+		// Spell in the location
 		this.spell = new Spell("Bubbles", "Cast bubbles to keep a sense of humanity.", 0, 10, SpellType.BUBBLES);
+		
+		// Character in the location
 	}
 }

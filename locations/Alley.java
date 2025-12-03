@@ -20,11 +20,13 @@ public class Alley extends LocationBase {
 	public Alley() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		Key2 key2 = new Key2();
 		this.getItems().add(key2);
 		
-		// All spells in the location
+		// Spell in the location
 		this.spell = new Spell("SixthSence", "Shows the content of a nearby Location.", 0, 50, SpellType.SIXTHSENCE);
+		
+		// Character in the location
 	}
 }

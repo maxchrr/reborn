@@ -17,10 +17,12 @@ public class Kebab extends LocationBase {
 	public Kebab() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		KebabItem kebab = new KebabItem();
 		this.getItems().add(kebab);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

@@ -17,10 +17,12 @@ public class River extends LocationBase {
 	public River() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		RustyAmulet rustyAmulet = new RustyAmulet();
 		this.getItems().add(rustyAmulet);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

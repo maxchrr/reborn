@@ -17,10 +17,12 @@ public class Graveyard extends LocationBase {
 	public Graveyard() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		Gun gun = new Gun();
 		this.getItems().add(gun);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

@@ -17,10 +17,12 @@ public class Crossroads extends LocationBase {
 	public Crossroads() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		Sword sword = new Sword();
 		this.getItems().add(sword);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }

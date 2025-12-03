@@ -18,12 +18,14 @@ public class Pub extends LocationBase {
 	public Pub() {
 		super();
 		
-		// All items in the location
+		// Items in the location
 		Key1 key1 = new Key1();
 		Soda soda = new Soda();
 		this.getItems().add(key1);
 		this.getItems().add(soda);
 		
-		// All spells in the location
+		// Spell in the location
+						
+		// Character in the location
 	}
 }
