@@ -5,7 +5,7 @@ import spells.Spell;
 import spells.SpellType;
 
 
-public class Alley extends BaseLocation {
+public class Alley extends LocationBase {
 
 	@Override
 	public String getName() {

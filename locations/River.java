@@ -2,7 +2,7 @@ package locations;
 
 import items.RustyAmulet;
 
-public class River extends BaseLocation {
+public class River extends LocationBase {
 
 	@Override
 	public String getName() {

@@ -3,7 +3,7 @@ package core;
 import java.util.List;
 
 import items.Bag;
-import locations.BaseLocation;
+import locations.LocationBase;
 import spells.Spell;
 import util.Writer;
 
@@ -12,7 +12,7 @@ public class Hero {
 	private static Writer writer;
 	private int hp;
 	private int mana;
-	private BaseLocation currLocation;
+	private LocationBase currLocation;
 	private boolean hasBag;
 	private Bag bag;
 	private List<Spell> spells;
@@ -33,7 +33,7 @@ public class Hero {
 		return this.mana;	
 	}
 	
-	public BaseLocation getLocation() {
+	public LocationBase getLocation() {
 		return this.currLocation;	
 	}
 	
@@ -58,7 +58,7 @@ public class Hero {
 		return spells;
 	}
 	
-	public Hero(Writer writer, int hp, int mana, BaseLocation loc, boolean hasBag, Bag bag, List<Spell> spells) {
+	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag, List<Spell> spells) {
 		Hero.writer = writer;
 		this.hp = hp;
 		this.mana = mana;
@@ -88,7 +88,7 @@ public class Hero {
 		this.mana -= mana;
 	}
 	
-	public void move(BaseLocation location) {
+	public void move(LocationBase location) {
 		currLocation = location;
 	}
 	

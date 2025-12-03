@@ -3,7 +3,7 @@ package locations;
 import items.Key1;
 import items.Soda;
 
-public class Pub extends BaseLocation {
+public class Pub extends LocationBase {
 
 	@Override
 	public String getName() {

@@ -3,7 +3,7 @@ package locations;
 import spells.Spell;
 import spells.SpellType;
 
-public class Highway extends BaseLocation {
+public class Highway extends LocationBase {
 
 	@Override
 	public String getName() {

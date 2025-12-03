@@ -2,7 +2,7 @@ package locations;
 
 import items.Apple;
 
-public class MotelEntry extends BaseLocation {
+public class MotelEntry extends LocationBase {
 
 	@Override
 	public String getName() {

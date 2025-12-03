@@ -3,7 +3,7 @@ package locations;
 import spells.Spell;
 import spells.SpellType;
 
-public class Tunnel extends BaseLocation {
+public class Tunnel extends LocationBase {
 
 	@Override
 	public String getName() {

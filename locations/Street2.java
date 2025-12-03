@@ -1,6 +1,6 @@
 package locations;
 
-public class Street2 extends BaseLocation {
+public class Street2 extends LocationBase {
 
 	@Override
 	public String getName() {

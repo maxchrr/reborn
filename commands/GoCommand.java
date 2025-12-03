@@ -1,7 +1,7 @@
 package commands;
 
 import core.Hero;
-import locations.BaseLocation;
+import locations.LocationBase;
 import locations.Exit;
 
 public class GoCommand implements Command {
@@ -23,10 +23,10 @@ public class GoCommand implements Command {
 	public void execute(Hero hero, String[] args) {
 		if (args.length < 1) return;
 		
-		BaseLocation currentLocation = (BaseLocation) hero.getLocation();
+		LocationBase currentLocation = (LocationBase) hero.getLocation();
 		Exit exit = currentLocation.getExits().get(args[0].toLowerCase());
 		if (exit != null && exit.isAccessible()) {
-			BaseLocation targetLocation = (BaseLocation) exit.getTarget();
+			LocationBase targetLocation = (LocationBase) exit.getTarget();
 			hero.move(targetLocation);
 			hero.getWriter().display("Moving to " + targetLocation.getName());
 			hero.getWriter().display(targetLocation.getDescription());

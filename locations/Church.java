@@ -5,7 +5,7 @@ import spells.Spell;
 import spells.SpellType;
 import items.Bullets;
 
-public class Church extends BaseLocation {
+public class Church extends LocationBase {
 
 	@Override
 	public String getName() {

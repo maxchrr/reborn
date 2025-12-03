@@ -1,12 +1,12 @@
 package items;
 
 import core.Hero;
-import locations.BaseLocation;
+import locations.LocationBase;
 
 public abstract class ItemBase implements Item {
 	
 	@Override
-    public boolean onTake(Hero hero, BaseLocation location) {
+    public boolean onTake(Hero hero, LocationBase location) {
         if (!hero.hasBag()) {
             hero.getWriter().display("I don't know where to put this.");
             return false;
@@ -22,7 +22,7 @@ public abstract class ItemBase implements Item {
     }
 
 	@Override
-	public boolean onDrop(Hero hero, BaseLocation location) {
+	public boolean onDrop(Hero hero, LocationBase location) {
 	    hero.getWriter().display("You dropped the " + this.getName() + ".");
 	    return true;
 	}

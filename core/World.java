@@ -27,7 +27,7 @@ public class World {
     public Tunnel tunnel;
     public River river;
     
-    public BaseLocation startingLocation;
+    public LocationBase startingLocation;
 
     public World() {
         spaceship  	  = new Spaceship();

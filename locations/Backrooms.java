@@ -1,6 +1,6 @@
 package locations;
 
-public class Backrooms extends BaseLocation {
+public class Backrooms extends LocationBase {
 
 	@Override
 	public String getName() {

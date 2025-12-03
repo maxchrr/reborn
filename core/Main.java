@@ -31,7 +31,7 @@ public class Main {
         
         // Initialize the World
         World world = new World();
-        BaseLocation current = world.startingLocation;
+        LocationBase current = world.startingLocation;
         
         writer.debug("World ready");
         

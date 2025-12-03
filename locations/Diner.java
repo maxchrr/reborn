@@ -1,6 +1,6 @@
 package locations;
 
-public class Diner extends BaseLocation {
+public class Diner extends LocationBase {
 
 	@Override
 	public String getName() {

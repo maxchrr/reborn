@@ -3,7 +3,7 @@ package commands;
 import characters.Character;
 import core.Hero;
 import items.Item;
-import locations.BaseLocation;
+import locations.LocationBase;
 import locations.Exit;
 
 public class LookCommand implements Command {
@@ -31,9 +31,9 @@ public class LookCommand implements Command {
 		}
 		
 		hero.getWriter().display("Exits: ");
-		BaseLocation currentLocation = hero.getLocation();
+		LocationBase currentLocation = hero.getLocation();
 		for (Exit exit : currentLocation.getExits().values()) {
-			BaseLocation exitLocation = exit.getTarget();
+			LocationBase exitLocation = exit.getTarget();
 			hero.getWriter().display(exit.isAccessible() ? exitLocation.getName() : "");
 		}
 		

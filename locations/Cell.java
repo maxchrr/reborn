@@ -1,6 +1,6 @@
 package locations;
 
-public class Cell extends BaseLocation {
+public class Cell extends LocationBase {
 
 	@Override
 	public String getName() {

@@ -1,6 +1,6 @@
 package locations;
 
-public class StrangeOffice extends BaseLocation {
+public class StrangeOffice extends LocationBase {
 
 	@Override
 	public String getName() {

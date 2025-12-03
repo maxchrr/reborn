@@ -1,6 +1,6 @@
 package locations;
 
-public class BrokenAlley extends BaseLocation {
+public class BrokenAlley extends LocationBase {
 
 	@Override
 	public String getName() {

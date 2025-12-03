@@ -2,7 +2,7 @@ package locations;
 
 import items.Sword;
 
-public class Crossroads extends BaseLocation {
+public class Crossroads extends LocationBase {
 
 	@Override
 	public String getName() {

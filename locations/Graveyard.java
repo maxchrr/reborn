@@ -2,7 +2,7 @@ package locations;
 
 import items.Gun;
 
-public class Graveyard extends BaseLocation {
+public class Graveyard extends LocationBase {
 
 	@Override
 	public String getName() {

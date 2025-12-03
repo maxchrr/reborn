@@ -1,7 +1,7 @@
 package items;
 
 import core.Hero;
-import locations.BaseLocation;
+import locations.LocationBase;
 
 /**
  * Represents a single item.
@@ -14,10 +14,10 @@ public interface Item {
     String getDescription();
     
     /** When an item is taken. */
-    boolean onTake(Hero hero, BaseLocation location);
+    boolean onTake(Hero hero, LocationBase location);
     
     /** When an item is dropped. */
-    boolean onDrop(Hero hero, BaseLocation location);
+    boolean onDrop(Hero hero, LocationBase location);
     
     /** Use this item single. */
     default void onUse(Hero hero) {

@@ -4,7 +4,7 @@ import items.Bag;
 import spells.Spell;
 import spells.SpellType;
 
-public class Spaceship extends BaseLocation {
+public class Spaceship extends LocationBase {
 
 	@Override
 	public String getName() {

@@ -2,7 +2,7 @@ package locations;
 
 import items.KebabItem;
 
-public class Kebab extends BaseLocation {
+public class Kebab extends LocationBase {
 
 	@Override
 	public String getName() {

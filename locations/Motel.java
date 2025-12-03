@@ -2,7 +2,7 @@ package locations;
 
 import items.HpPotion;
 
-public class Motel extends BaseLocation {
+public class Motel extends LocationBase {
 
 	@Override
 	public String getName() {

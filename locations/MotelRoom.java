@@ -1,6 +1,6 @@
 package locations;
 
-public class MotelRoom extends BaseLocation {
+public class MotelRoom extends LocationBase {
 
 	@Override
 	public String getName() {

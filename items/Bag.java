@@ -3,7 +3,7 @@ package items;
 import java.util.List;
 
 import core.Hero;
-import locations.BaseLocation;
+import locations.LocationBase;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class Bag implements Item {
 	}
 	
 	@Override
-	public boolean onTake(Hero hero, BaseLocation location) {
+	public boolean onTake(Hero hero, LocationBase location) {
 	    if (hero.hasBag()) {
 	        hero.getWriter().display("I already have a bag.");
 	        return false;
@@ -35,7 +35,7 @@ public class Bag implements Item {
 	}
 	
 	@Override
-	public boolean onDrop(Hero hero, BaseLocation location) {
+	public boolean onDrop(Hero hero, LocationBase location) {
 	    if (!this.getItems().isEmpty()) {
 	        hero.getWriter().display("I can't drop the bag while it is not empty.");
 	        return false;

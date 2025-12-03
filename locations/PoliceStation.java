@@ -2,7 +2,7 @@ package locations;
 
 import items.MagicWand;
 
-public class PoliceStation extends BaseLocation {
+public class PoliceStation extends LocationBase {
 
 	@Override
 	public String getName() {
