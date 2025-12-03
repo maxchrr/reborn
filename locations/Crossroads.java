@@ -1,5 +1,6 @@
 package locations;
 
+import characters.OldLady;
 import items.Sword;
 
 public class Crossroads extends LocationBase {
@@ -24,5 +25,6 @@ public class Crossroads extends LocationBase {
 		// Spell in the location
 						
 		// Character in the location
+		this.character = new OldLady();
 	}
 }

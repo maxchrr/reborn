@@ -1,5 +1,6 @@
 package locations;
 
+import characters.Wonderer;
 import spells.Spell;
 import spells.SpellType;
 
@@ -24,5 +25,6 @@ public class Highway extends LocationBase {
 		this.spell = new Spell("Enforcer", "Opens a door using your HUGE muscles.", 0, 70, SpellType.ENFORCER);
 		
 		// Character in the location
+		this.character = new Wonderer();
 	}
 }

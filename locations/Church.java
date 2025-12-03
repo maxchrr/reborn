@@ -3,6 +3,7 @@ package locations;
 import items.ManaPotion;
 import spells.Spell;
 import spells.SpellType;
+import characters.Ghoul;
 import items.Bullets;
 
 public class Church extends LocationBase {
@@ -30,5 +31,6 @@ public class Church extends LocationBase {
 		this.spell = new Spell("RadioCall", "Gives a way to the spaceship.", 0, 40, SpellType.RADIOCALL);
 		
 		// Character in the location
+		this.character = new Ghoul();
 	}
 }
