@@ -1,8 +1,7 @@
 package items;
 
-import characters.Character;
+import characters.CharacterBase;
 import core.Hero;
-import locations.LocationBase;
 
 public class Sword extends ItemBase {
 
@@ -17,9 +16,15 @@ public class Sword extends ItemBase {
 	}
 	
 	@Override
-	public void onUseOnCharacter(Hero hero, Character character) {
+	public void onUseOnCharacter(Hero hero, CharacterBase character) {
 		if (!hero.hasBag()) return;
 		
-		if (character)
+		int damageAmount = 10;
+		character.damage(hero, damageAmount);
+
+		hero.getWriter().display("You deal " + damageAmount + " damage to " + character.getName());
+		if (character.getHealth() <= 0) {
+			hero.getWriter().display(character.getName() + " has been defeated.");
+		}
 	}
 }
