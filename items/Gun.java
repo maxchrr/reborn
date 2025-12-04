@@ -1,6 +1,6 @@
 package items;
 
-import characters.CharacterBase;
+import characters.Character;
 import core.Hero;
 
 public class Gun extends ItemBase {
@@ -33,7 +33,7 @@ public class Gun extends ItemBase {
 	}
 	
 	@Override
-	public void onUseOnCharacter(Hero hero, CharacterBase character) {
+	public void onAttack(Hero hero, Character character) {
 		if (!hero.hasBag()) return;
 		
 		if (this.getAmmo() == 0) { 

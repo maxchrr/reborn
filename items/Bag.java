@@ -1,11 +1,10 @@
 package items;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import core.Hero;
-import locations.LocationBase;
-
-import java.util.ArrayList;
+import locations.Location;
 
 public class Bag implements Item {
 	
@@ -23,7 +22,7 @@ public class Bag implements Item {
 	}
 	
 	@Override
-	public boolean onTake(Hero hero, LocationBase location) {
+	public boolean onTake(Hero hero, Location location) {
 	    if (hero.hasBag()) {
 	        hero.getWriter().display("I already have a bag.");
 	        return false;
@@ -35,7 +34,7 @@ public class Bag implements Item {
 	}
 	
 	@Override
-	public boolean onDrop(Hero hero, LocationBase location) {
+	public boolean onDrop(Hero hero, Location location) {
 	    if (!this.getItems().isEmpty()) {
 	        hero.getWriter().display("I can't drop the bag while it is not empty.");
 	        return false;

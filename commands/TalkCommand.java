@@ -42,7 +42,7 @@ public class TalkCommand implements Command {
 		if ((inputName.equals("GHOST") || inputName.equals("OLDLADY")) && currentLocation.hasSpell()) {
 			Spell newSpell = currentLocation.getSpell();
 			hero.learn(newSpell);
-			hero.getWriter().display("You unlocked the " + newSpell.getName() + " spell: " + newSpell.getDesc());
+			hero.getWriter().display("You unlocked the " + newSpell.getName() + " spell: " + newSpell.getDescription());
 		}
 
 	}

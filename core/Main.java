@@ -17,6 +17,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		// Register commands
+		manager.register(new AttackCommand());
 		manager.register(new DropCommand());
         manager.register(new GoCommand());
         manager.register(new HelpCommand(manager));

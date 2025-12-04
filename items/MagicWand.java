@@ -29,12 +29,6 @@ public class MagicWand extends ItemBase {
 	        hero.getWriter().display("You don't know this spell.");
 	        return;
 	    }
-	    
-	    // Check for mana
-	    if (hero.getMana() < knownSpell.getCost()) {
-	        hero.getWriter().display("Not enough mana!");
-	        return;
-	    }
 		
 		hero.cast(spell);
 	}

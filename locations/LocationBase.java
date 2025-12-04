@@ -29,11 +29,7 @@ public abstract class LocationBase implements Location {
 	}
 	
 	public Character getCharacter() {
-		if (this.hasCharacter()) {
-			return this.character;
-		} else {
-			return null;
-		}
+		return this.character;
 	}
 	
 	public boolean hasSpell() {
@@ -41,11 +37,7 @@ public abstract class LocationBase implements Location {
 	}
 	
 	public Spell getSpell() {
-		if (this.hasSpell()) {
-			return this.spell;
-		} else {
-			return null;
-		}
+		return this.spell;
 	}
 	
 	public void addExit(LocationBase target) {

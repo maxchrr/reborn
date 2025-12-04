@@ -1,6 +1,6 @@
 package items;
 
-import characters.CharacterBase;
+import characters.Character;
 import core.Hero;
 
 public class Sword extends ItemBase {
@@ -16,13 +16,12 @@ public class Sword extends ItemBase {
 	}
 	
 	@Override
-	public void onUseOnCharacter(Hero hero, CharacterBase character) {
+	public void onAttack(Hero hero, Character character) {
 		if (!hero.hasBag()) return;
 		
 		int damageAmount = 10;
-		character.damage(hero, damageAmount);
-
 		hero.getWriter().display("You deal " + damageAmount + " damage to " + character.getName());
+		character.damage(hero, damageAmount);
 		if (character.getHealth() <= 0) {
 			hero.getWriter().display(character.getName() + " has been defeated.");
 		}

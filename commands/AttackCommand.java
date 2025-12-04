@@ -1,20 +1,20 @@
 package commands;
 
+import characters.Character;
 import core.Hero;
 import items.Item;
+import locations.LocationBase;
 
-public class UseCommand implements Command {
+public class AttackCommand implements Command {
 
 	@Override
 	public String getName() {
-		return "USE";
+		return "ATTACK";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Uses the object arg1. In case a second argument is given, the first\n"
-				+ "one is used with the second. For example, use gun bullet may load the gun, which\n"
-				+ "can be used after that.";
+		return "Fight a character using an item.";
 	}
 
 	@Override
@@ -22,29 +22,34 @@ public class UseCommand implements Command {
 		if (args.length == 0) return;
 		
 		String inputName = args[0];
-		Item item1 = findItem(hero, inputName);
-		
-		if (item1 == null) {
-			hero.getWriter().display("I don't have " + inputName + ".");
+		LocationBase currentLocation = hero.getLocation();
+		if (!currentLocation.hasCharacter()) {
+            hero.getWriter().display("There's nobody to attack here.");
             return;
-		}
+        }
 		
-		// USE <item>
-		if (args.length == 1) {
-			item1.onUse(hero);
+		Character character = currentLocation.getCharacter();
+		String characterName = character.getName().toUpperCase();
+		
+		if (!inputName.equalsIgnoreCase(characterName)) {
+			hero.getWriter().display("There's no one named " + inputName + " here.");
 			return;
 		}
 		
-		// USE <item1> <item2>
-		inputName = args[1];
-		Item item2 = findItem(hero, inputName);
+		if (args.length == 1) {
+			hero.getWriter().display("With what thing you want to attack this character.");
+			return;
+		}
 		
-        if (item2 == null) {
+		inputName = args[1];
+		Item item = findItem(hero, inputName);
+		
+		if (item == null) {
             hero.getWriter().display("I don't have " + inputName + ".");
             return;
         }
-
-        item1.onUseWith(hero, item2);
+		
+		item.onAttack(hero, character);
 	}
 
 	// Search for an item in the bag (including the bag itself)

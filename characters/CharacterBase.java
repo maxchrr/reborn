@@ -12,6 +12,7 @@ public abstract class CharacterBase implements Character {
 		this.backDamage = backDamage;
 	}
 	
+	@Override
 	public int getHealth() {
 		return this.health;
 	}
@@ -28,6 +29,7 @@ public abstract class CharacterBase implements Character {
 		this.backDamage = amount;
 	}
 
+	@Override
 	public void damage(Hero hero, int amount) {
 		if (this.getHealth() <= 0) {
 			hero.getWriter().display("I can't fight this character.");
@@ -37,7 +39,7 @@ public abstract class CharacterBase implements Character {
 		// Kill the character
 		if (amount >= this.getHealth()) {
 			this.health = 0;
-			hero.getWriter().display("The " + this.getName() + "is dead.");
+			hero.getWriter().display("The " + this.getName() + " is dead.");
 			return;
 		}
 		
@@ -50,7 +52,7 @@ public abstract class CharacterBase implements Character {
 		} else {
 			hero.getWriter().display("The " + this.getName() + " " + this.damageText());
 		}
-		hero.getWriter().display("Dealt you " + this.getBackDamage() + " damage.");
+		hero.getWriter().display("You receive " + this.getBackDamage() + " damage.");
 	}
 
 }

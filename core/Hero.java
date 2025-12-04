@@ -11,7 +11,7 @@ import util.Writer;
 public class Hero {
 	
 	private boolean started;
-	private static Writer writer;
+	private Writer writer;
 	
 	private int hp;
 	private int mana;
@@ -28,7 +28,7 @@ public class Hero {
 	}
 	
 	public Writer getWriter() {
-		return Hero.writer;
+		return this.writer;
 	}
 	
 	public int getHealth() {
@@ -48,11 +48,7 @@ public class Hero {
 	}
 	
 	public Bag getBag() {
-		if (this.hasBag()) {
-			return this.bag;
-		} else {
-			return null;
-		}
+		return this.bag;
 	}
 	
 	public List<Spell> getSpells() {
@@ -72,12 +68,23 @@ public class Hero {
 	/** ------ Spell management ------ */
 	
 	public void learn(Spell spell) {
-		this.SPELLS.add(spell);
+		if (!this.SPELLS.contains(spell)) {
+            this.SPELLS.add(spell);
+            this.getWriter().display("You learn the " + spell.getName() + " spell: " + spell.getDescription());
+        }
 	}
 	
 	public void cast(Spell spell) {
-		spell.action(this, spell);
+		if (spell.getCost() > this.mana) {
+            this.getWriter().display("Not enough mana!");
+            return;
+        }
+        
+        this.mana -= spell.getCost();
+        spell.action(this, spell);
 	}
+	
+	/** ------ Health & Mana ------ */
 	
 	public void addHealth(int amount) {
 		this.hp += amount;
@@ -107,14 +114,13 @@ public class Hero {
 		if (location.hasSpell()) {
 			Spell newSpell = location.getSpell();
 			this.learn(newSpell);
-			this.getWriter().display("You unlocked the " + newSpell.getName() + " spell: " + newSpell.getDesc());
 		}
 	}
 	
 	/** ------ Constructor ------ */
 
 	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag) {
-		Hero.writer = writer;
+		this.writer = writer;
 		this.hp = hp;
 		this.mana = mana;
 		this.currentLocation = loc;

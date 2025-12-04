@@ -1,14 +1,12 @@
 package items;
 
-import characters.CharacterBase;
 import core.Hero;
-import locations.LocationBase;
-import spells.Spell;
+import locations.Location;
 
 public abstract class ItemBase implements Item {
 	
 	@Override
-    public boolean onTake(Hero hero, LocationBase location) {
+    public boolean onTake(Hero hero, Location location) {
         if (!hero.hasBag()) {
             hero.getWriter().display("I don't know where to put this.");
             return false;
@@ -24,28 +22,8 @@ public abstract class ItemBase implements Item {
     }
 
 	@Override
-	public boolean onDrop(Hero hero, LocationBase location) {
+	public boolean onDrop(Hero hero, Location location) {
 	    hero.getWriter().display("You dropped the " + this.getName() + ".");
 	    return true;
-	}
-	
-	@Override
-	public void onUse(Hero hero) {
-		hero.getWriter().display("Nothing happens.");
-	}
-	
-	@Override
-	public void onUseWith(Hero hero, Item item) {
-		hero.getWriter().display("Nothing happens.");
-	}
-	
-	@Override
-	public void onUseWithSpell(Hero hero, Spell spell) {
-		hero.getWriter().display("Nothing happens.");
-	}
-	
-	@Override
-	public void onUseOnCharacter(Hero hero, CharacterBase character) {
-		hero.getWriter().display("Nothing happens.");
 	}
 }

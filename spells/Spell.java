@@ -4,7 +4,7 @@ import core.Hero;
 
 public class Spell {
 	private String name;
-	private String desc;
+	private String description;
 	private int value;
 	private int cost;
 	private SpellType type;
@@ -13,8 +13,8 @@ public class Spell {
 		return this.name;
 	}
 	
-	public String getDesc() {
-		return this.desc;
+	public String getDescription() {
+		return this.description;
 	}
 	
 	public int getValue() {
@@ -29,9 +29,9 @@ public class Spell {
 		return this.type;
 	}
 	
-	public Spell(String name, String desc, int value, int cost, SpellType type) {
+	public Spell(String name, String description, int value, int cost, SpellType type) {
 		this.name = name;
-		this.desc = desc;
+		this.description = description;
 		this.value = value;
 		this.cost = cost;
 		this.type = type;
