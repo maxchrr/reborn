@@ -24,6 +24,7 @@ public class Main {
         manager.register(new LookCommand());
         manager.register(new QuitCommand());
         manager.register(new StartCommand());
+        manager.register(new StatsCommand());
         manager.register(new TakeCommand());
         manager.register(new TalkCommand());
         manager.register(new UseCommand());
