@@ -80,7 +80,7 @@ public class Hero {
             return;
         }
         
-        this.mana -= spell.getCost();
+        this.useMana(spell.getCost());
         spell.action(this, spell);
 	}
 	
