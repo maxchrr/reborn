@@ -1,10 +1,10 @@
 package items;
 
+import characters.CharacterBase;
 import core.Hero;
-import characters.Character;
 
 public class Gun extends ItemBase {
-	private int ammo = 0;
+	private int ammo;
 
 	@Override
 	public String getName() {
@@ -16,23 +16,35 @@ public class Gun extends ItemBase {
 		return "A modern pistol, it's mag is empty.";
 	}
 	
-	public void addAmmo() {
-		this.ammo = 3;
+	public Gun(int ammo) {
+		this.ammo = ammo;
 	}
 	
-	public void delAmmo() {
-		this.ammo -= 1;
+	public int getAmmo() {
+		return this.ammo;
 	}
 	
-	public void onUseWith(Hero hero, Character character) {
+	public void addAmmo(int amount) {
+		this.ammo = amount;
+	}
+	
+	public void delAmmo(int amount) {
+		this.ammo -= amount;
+	}
+	
+	@Override
+	public void onUseOn(Hero hero, CharacterBase character) {
 		if (!hero.hasBag()) return;
 		
-		if (this.ammo == 0) 
+		if (this.getAmmo() == 0) { 
 			hero.getWriter().display("Clip is empty, go find ammo!");
-		// Destroy the item after use
+			return;
+		}
 		
-		character.delHealth(hero, 60);
-		this.delAmmo();
-		hero.getWriter().display("You deal 60 damage to " + character.getName() + ", nice shot!\n");
+		int damageAmount = 60;
+		character.damage(hero, damageAmount);
+		
+		this.delAmmo(-1);
+		hero.getWriter().display("You deal " + damageAmount + " damage to " + character.getName() + ", nice shot!\n");
 	}
 }

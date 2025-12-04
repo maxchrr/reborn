@@ -1,6 +1,6 @@
 package items;
 
-import characters.Character;
+import characters.CharacterBase;
 import core.Hero;
 import locations.LocationBase;
 
@@ -31,7 +31,7 @@ public interface Item {
     }
     
     /** Use this item on character. */
-    default void onUseOn(Hero hero, Character character) {
+    default void onUseOn(Hero hero, CharacterBase character) {
     	hero.getWriter().display("These things cannot be used on this.");
     }
 }

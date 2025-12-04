@@ -1,5 +1,6 @@
 package items;
 
+import characters.CharacterBase;
 import core.Hero;
 import locations.LocationBase;
 
@@ -33,7 +34,12 @@ public abstract class ItemBase implements Item {
 	}
 	
 	@Override
-	public void onUseWith(Hero hero, Item other) {
+	public void onUseWith(Hero hero, Item item) {
+		hero.getWriter().display("Nothing happens.");
+	}
+	
+	@Override
+	public void onUseOn(Hero hero, CharacterBase character) {
 		hero.getWriter().display("Nothing happens.");
 	}
 }

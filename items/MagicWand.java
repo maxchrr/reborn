@@ -15,7 +15,8 @@ public class MagicWand extends ItemBase {
 		return "A magic weapon that can cast the different spells you'll learn.";
 	}
 	
-	public void onUseWith(Hero hero, MagicWand magicWand, Spell spell) {
+	@Override
+	public void onUseWith(Hero hero, Item other, Spell spell) {
 		if (!hero.hasBag()) return;
 		
 		if (!hero.getBag().getItems().contains(magicWand)) 
