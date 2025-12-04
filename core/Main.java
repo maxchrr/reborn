@@ -44,10 +44,12 @@ public class Main {
 		writer.display("Enter 'START' to start this awesome aventure");
 
 		// Main command loop
-        while (true) {
+        while (true && hero.getHealth() > 0) {
             System.out.print("> ");
             String input = scanner.nextLine();
             manager.handle(writer, hero, input);
         }
+        
+        hero.getWriter().display("Game over.");
 	}
 }

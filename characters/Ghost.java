@@ -1,8 +1,6 @@
 package characters;
 
-import core.Hero;
-
-public class Ghost implements Character {
+public class Ghost extends CharacterBase {
 
 	@Override
 	public String getName() {
@@ -16,13 +14,6 @@ public class Ghost implements Character {
 	}
 
 	@Override
-	public int getHealth() {
-		return -1;
-	}
-	
-	public void delHealth(Hero hero, int amount) {};
-
-	@Override
 	public String talkInteraction() {
 		return "They killed me for witnessing the truth, "
 				+ "I was not a threat in that cell, but that was seemingly "
@@ -30,5 +21,7 @@ public class Ghost implements Character {
 				+ "it might found its utility elsewhere...";
 	}
 	
-	public void damagePlayer(Hero hero) {};
+	public Ghost(int health, int backDamage) {
+		super(health, backDamage);
+	}
 }

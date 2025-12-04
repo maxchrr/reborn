@@ -1,5 +1,6 @@
 package items;
 
+import characters.Character;
 import core.Hero;
 import locations.LocationBase;
 
@@ -27,5 +28,10 @@ public interface Item {
     /** Use this item together. */
     default void onUseWith(Hero hero, Item other) {
     	hero.getWriter().display("These two things can't be used together.");
+    }
+    
+    /** Use this item on character. */
+    default void onUseOn(Hero hero, Character character) {
+    	hero.getWriter().display("These things cannot be used on this.");
     }
 }

@@ -25,6 +25,6 @@ public class Crossroads extends LocationBase {
 		// Spell in the location
 						
 		// Character in the location
-		this.character = new OldLady();
+		this.character = new OldLady(40, 2);
 	}
 }

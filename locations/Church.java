@@ -31,6 +31,6 @@ public class Church extends LocationBase {
 		this.spell = new Spell("RadioCall", "Gives a way to the spaceship.", 0, 40, SpellType.RADIOCALL);
 		
 		// Character in the location
-		this.character = new Ghoul();
+		this.character = new Ghoul(60, 35);
 	}
 }

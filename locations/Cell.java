@@ -22,6 +22,6 @@ public class Cell extends LocationBase {
 		// Spell in the location
 						
 		// Character in the location
-		this.character = new Ghost();
+		this.character = new Ghost(-1, 0);
 	}
 }
