@@ -31,25 +31,30 @@ public class LookCommand implements Command {
 		
 		LocationBase currentLocation = hero.getLocation();
 		
-		// Exits
-		hero.getWriter().display("Exits: ");
-		for (Exit exit : currentLocation.getExits().values()) {
-			if (exit.isAccessible()) {
-				hero.getWriter().display(" - " + exit.getTarget().getName());
-			}
-		}
-		
 		// Items
-		hero.getWriter().display("\nItems: ");
-		for (Item item : currentLocation.getItems()) {
-			hero.getWriter().display(" - " + item.getName());
-		}
+		if (currentLocation.getItems().isEmpty()) {
+	        hero.getWriter().display(" Items: none");
+	    } else {
+	        hero.getWriter().display(" Items:");
+	        for (Item item : currentLocation.getItems()) {
+	            hero.getWriter().display("  - " + item.getName());
+	        }
+	    }
 		
 		// Character
 		if (currentLocation.hasCharacter()) {
-			hero.getWriter().display("\nCharacter: ");
-			hero.getWriter().display(" - " + currentLocation.getCharacter().getName());
-		}
+	        hero.getWriter().display("\n Character: " + currentLocation.getCharacter().getName());
+	    } else {
+	        hero.getWriter().display(" Character: none");
+	    }
+
+		// Exits
+	    hero.getWriter().display("\n Exits:");
+	    for (Exit e : currentLocation.getExits().values()) {
+	        if (e.isAccessible()) {
+	            hero.getWriter().display("  - " + e.getTarget().getName());
+	        }
+	    }
 	}
 
 }
