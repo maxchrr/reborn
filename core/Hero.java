@@ -70,7 +70,7 @@ public class Hero {
 	public void learn(Spell spell) {
 		if (!this.SPELLS.contains(spell)) {
             this.SPELLS.add(spell);
-            this.getWriter().display("You learn the " + spell.getName() + " spell: " + spell.getDescription());
+            this.getWriter().display("You learned the " + spell.getName() + " spell: " + spell.getDescription());
         }
 	}
 	
