@@ -18,7 +18,7 @@ public class Ghost extends CharacterBase {
 		return "They killed me for witnessing the truth, "
 				+ "I was not a threat in that cell, but that was seemingly "
 				+ "not enough for them. I heard an old amulet is located nearby, "
-				+ "it might found its utility elsewhere...";
+				+ "it might find its utility elsewhere...";
 	}
 	
 	public Ghost(int health, int backDamage) {
