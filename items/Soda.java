@@ -18,10 +18,10 @@ public class Soda extends ItemBase {
 	public void onUse(Hero hero) {
 		if (!hero.hasBag()) return;
 		
-		hero.addHealth(5);
+		hero.addHealth(15);
 		
 		// Destroy the item after use
 		hero.getBag().getItems().removeIf(it -> it.getName().equalsIgnoreCase(this.getName()));
-		hero.getWriter().display(this.getName() + "TODO");
+		hero.getWriter().display(this.getName() + " is empty. You crush it and throw it to the ground");
 	}
 }

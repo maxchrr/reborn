@@ -22,7 +22,7 @@ public class RustyAmulet extends ItemBase {
 		LocationBase currentLocation = hero.getLocation();
 		if (!currentLocation.getName().equalsIgnoreCase("MotelRoom")) return;
 		
-		hero.getWriter().display("TODO");
+		hero.getWriter().display("The amulet activates, revealing inscriptions on the wall : The truth awaits at the diner, enter the StrangeOffice to uncover the mystery of that town...");
 		
 		// Destroy the item after use
 		hero.getBag().getItems().removeIf(it -> it.getName().equalsIgnoreCase(this.getName()));

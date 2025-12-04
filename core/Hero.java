@@ -83,8 +83,6 @@ public class Hero {
 		spell.action(this, spell);
 	}
 	
-	
-	
 	public void addHealth(int amount) {
 		this.hp += amount;
 	}

@@ -18,10 +18,10 @@ public class KebabItem extends ItemBase {
 	public void onUse(Hero hero) {
 		if (!hero.hasBag()) return;
 		
-		hero.addHealth(20);
+		hero.addHealth(70);
 		
 		// Destroy the item after use
 		hero.getBag().getItems().removeIf(it -> it.getName().equalsIgnoreCase(this.getName()));
-		hero.getWriter().display(this.getName() + "TODO");
+		hero.getWriter().display(this.getName() + " has been consumed. Don't forget the tip!");
 	}
 }

@@ -22,6 +22,6 @@ public class Apple extends ItemBase {
 		
 		// Destroy the item after use
 		hero.getBag().getItems().removeIf(it -> it.getName().equalsIgnoreCase(this.getName()));
-		hero.getWriter().display(this.getName() + "TODO");
+		hero.getWriter().display("You eated the " + this.getName() + ".");
 	}
 }

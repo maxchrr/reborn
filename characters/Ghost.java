@@ -1,5 +1,7 @@
 package characters;
 
+import core.Hero;
+
 public class Ghost implements Character {
 
 	@Override
@@ -17,6 +19,8 @@ public class Ghost implements Character {
 	public int getHealth() {
 		return -1;
 	}
+	
+	public void delHealth(Hero hero, int amount) {};
 
 	@Override
 	public String talkInteraction() {
@@ -25,4 +29,6 @@ public class Ghost implements Character {
 				+ "not enough for them. I heard an old amulet is located nearby, "
 				+ "it might found its utility elsewhere...";
 	}
+	
+	public void damagePlayer(Hero hero) {};
 }
