@@ -18,7 +18,7 @@ public class Graveyard extends LocationBase {
 		super();
 		
 		// Items in the location
-		Gun gun = new Gun();
+		Gun gun = new Gun(0);
 		this.getItems().add(gun);
 		
 		// Spell in the location

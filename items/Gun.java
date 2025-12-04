@@ -33,7 +33,7 @@ public class Gun extends ItemBase {
 	}
 	
 	@Override
-	public void onUseOn(Hero hero, CharacterBase character) {
+	public void onUseOnCharacter(Hero hero, CharacterBase character) {
 		if (!hero.hasBag()) return;
 		
 		if (this.getAmmo() == 0) { 

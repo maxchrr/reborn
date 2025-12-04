@@ -2,6 +2,7 @@ package items;
 
 import core.Hero;
 import locations.LocationBase;
+import locations.MotelRoom;
 
 public class RustyAmulet extends ItemBase {
 
@@ -20,7 +21,7 @@ public class RustyAmulet extends ItemBase {
 		if (!hero.hasBag()) return;
 		
 		LocationBase currentLocation = hero.getLocation();
-		if (!currentLocation.getName().equalsIgnoreCase("MotelRoom")) return;
+		if (!(currentLocation instanceof MotelRoom)) return;
 		
 		hero.getWriter().display("The amulet activates, revealing inscriptions on the wall : "
 				+ "The truth awaits at the diner, enter the StrangeOffice to uncover the mystery of that town...");

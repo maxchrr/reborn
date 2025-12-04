@@ -3,6 +3,7 @@ package items;
 import characters.CharacterBase;
 import core.Hero;
 import locations.LocationBase;
+import spells.Spell;
 
 public abstract class ItemBase implements Item {
 	
@@ -39,7 +40,12 @@ public abstract class ItemBase implements Item {
 	}
 	
 	@Override
-	public void onUseOn(Hero hero, CharacterBase character) {
+	public void onUseWithSpell(Hero hero, Spell spell) {
+		hero.getWriter().display("Nothing happens.");
+	}
+	
+	@Override
+	public void onUseOnCharacter(Hero hero, CharacterBase character) {
 		hero.getWriter().display("Nothing happens.");
 	}
 }

@@ -16,11 +16,26 @@ public class MagicWand extends ItemBase {
 	}
 	
 	@Override
-	public void onUseWith(Hero hero, Item other, Spell spell) {
+	public void onUseWithSpell(Hero hero, Spell spell) {
 		if (!hero.hasBag()) return;
+	    
+	    // Check if hero known the spell
+	    Spell knownSpell = hero.getSpells().stream()
+	            .filter(s -> s.getName().equalsIgnoreCase(spell.getName()))
+	            .findFirst()
+	            .orElse(null);
+
+	    if (knownSpell == null) {
+	        hero.getWriter().display("You don't know this spell.");
+	        return;
+	    }
+	    
+	    // Check for mana
+	    if (hero.getMana() < knownSpell.getCost()) {
+	        hero.getWriter().display("Not enough mana!");
+	        return;
+	    }
 		
-		if (!hero.getBag().getItems().contains(magicWand)) 
-			hero.getWriter().display("You don't have the right weapon to cast that spell.");
-		else hero.cast(spell);
+		hero.cast(spell);
 	}
 }

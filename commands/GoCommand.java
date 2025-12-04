@@ -2,6 +2,7 @@ package commands;
 
 import core.Hero;
 import locations.LocationBase;
+import locations.StrangeOffice;
 import spells.Spell;
 import locations.Exit;
 
@@ -51,7 +52,7 @@ public class GoCommand implements Command {
 		}
 		
 		// Special ending
-		if (target.getName().equalsIgnoreCase("StrangeOffice")) {
+		if (target instanceof StrangeOffice) {
 			hero.getWriter().display("You enter the locked office, everything seems untouched.\n"
 					+ "Everything looks normal until you spot something strange.\n "
 					+ "The screen is powered on, and the year displayed is 2125.\n"

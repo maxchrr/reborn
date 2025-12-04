@@ -1,8 +1,10 @@
 package items;
 
 import core.Hero;
+import locations.Cell;
 import locations.Exit;
 import locations.LocationBase;
+import locations.PoliceStation;
 
 public class Key extends ItemBase {
 
@@ -21,12 +23,12 @@ public class Key extends ItemBase {
 		if (!hero.hasBag()) return;
 		
 		LocationBase currentLocation = hero.getLocation();
-		if (!currentLocation.getName().equalsIgnoreCase("PoliceStation")) return;
+		if (!(currentLocation instanceof PoliceStation)) return;
 		
 		Exit exit = currentLocation.getExits()
 				.values()
 				.stream()
-				.filter(e -> e.getTarget().getName().equalsIgnoreCase("Cell"))
+				.filter(e -> e.getTarget() instanceof Cell)
 				.findFirst()
 				.orElse(null);
 		

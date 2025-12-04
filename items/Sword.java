@@ -17,7 +17,7 @@ public class Sword extends ItemBase {
 	}
 	
 	@Override
-	public void onUseOn(Hero hero, Character character) {
+	public void onUseOnCharacter(Hero hero, Character character) {
 		if (!hero.hasBag()) return;
 		
 		if (character)

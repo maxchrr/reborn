@@ -3,6 +3,7 @@ package items;
 import characters.CharacterBase;
 import core.Hero;
 import locations.LocationBase;
+import spells.Spell;
 
 /**
  * Represents a single item.
@@ -30,8 +31,12 @@ public interface Item {
     	hero.getWriter().display("These two things can't be used together.");
     }
     
+    default void onUseWithSpell(Hero hero, Spell spell) {
+    	hero.getWriter().display("These two things can't be used together.");
+    }
+    
     /** Use this item on character. */
-    default void onUseOn(Hero hero, CharacterBase character) {
+    default void onUseOnCharacter(Hero hero, CharacterBase character) {
     	hero.getWriter().display("These things cannot be used on this.");
     }
 }
