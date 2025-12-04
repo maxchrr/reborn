@@ -16,6 +16,7 @@ public class Hero {
 	private int hp;
 	private int mana;
 	private LocationBase currentLocation;
+	private World world;
 	
 	private Bag bag;
 	
@@ -41,6 +42,10 @@ public class Hero {
 	
 	public LocationBase getLocation() {
 		return this.currentLocation;	
+	}
+	
+	public World getWorld() {
+		return this.world;
 	}
 	
 	public boolean hasBag() {
@@ -119,11 +124,12 @@ public class Hero {
 	
 	/** ------ Constructor ------ */
 
-	public Hero(Writer writer, int hp, int mana, LocationBase loc, boolean hasBag, Bag bag) {
+	public Hero(Writer writer, int hp, int mana, LocationBase loc, World world, boolean hasBag, Bag bag) {
 		this.writer = writer;
 		this.hp = hp;
 		this.mana = mana;
 		this.currentLocation = loc;
+		this.world = world;
 		this.bag = hasBag ? bag : null;
 	}	
 }

@@ -1,10 +1,10 @@
 package items;
 
 import core.Hero;
+import locations.Crossroads;
 import locations.Exit;
 import locations.LocationBase;
 import locations.Motel;
-import locations.MotelRoom;
 
 public class RustyKey extends ItemBase {
 
@@ -23,16 +23,19 @@ public class RustyKey extends ItemBase {
 		if (!hero.hasBag()) return;
 		
 		LocationBase currentLocation = hero.getLocation();
-		if (!(currentLocation instanceof Motel)) return;
+		if (!(currentLocation instanceof Crossroads)) return;
 		
 		Exit exit = currentLocation.getExits()
 				.values()
 				.stream()
-				.filter(e -> e.getTarget() instanceof MotelRoom)
+				.filter(e -> e.getTarget() instanceof Motel)
 				.findFirst()
 				.orElse(null);
 		
-		if (exit == null) return;
+		if (exit == null) {
+			hero.getWriter().display("There is no locked door to open here.");
+	        return;
+		}
 		
 		// Open the exit
 		currentLocation.openExit(exit.getTarget());

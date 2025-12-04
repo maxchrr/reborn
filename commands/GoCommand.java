@@ -28,8 +28,13 @@ public class GoCommand implements Command {
 		LocationBase currentLocation = hero.getLocation();
 		Exit exit = currentLocation.getExits().get(direction);
 		
-		if (exit == null || !exit.isAccessible()) {
+		if (exit == null) {
 			hero.getWriter().display("I can't move there...");
+			return;
+		}
+
+		if (!exit.isAccessible()) {
+			hero.getWriter().display("This issue is locked...");
 			return;
 		}
 		

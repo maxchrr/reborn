@@ -38,7 +38,7 @@ public class Main {
         writer.debug("World ready");
         
         // Initialize the Hero on starting location
-        Hero hero = new Hero(writer, 100, 100, currentLocation, false, null);
+        Hero hero = new Hero(writer, 100, 100, currentLocation, world, false, null);
         
         writer.debug("Hero ready");
         

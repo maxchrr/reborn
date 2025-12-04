@@ -4,7 +4,9 @@ import java.util.List;
 
 import core.Hero;
 import items.Item;
+import locations.BrokenAlley;
 import locations.Exit;
+import locations.Graveyard;
 import locations.LocationBase;
 
 public class Spell {
@@ -96,10 +98,38 @@ public class Spell {
 		    }
 			break;
 		case RADIOCALL:
-			// show a list of Locations between you and the spaceship
-			break;
+			LocationBase spaceship = hero.getWorld().getSpaceship();
+			
+			if (spaceship == null) {
+		        hero.getWriter().display("Your radio call goes unanswered…");
+		        break;
+		    }
+			
+			hero.getWriter().display("You call the spaceship… *Bzzt* A bright light surrounds you…");
+		    hero.move(spaceship);
+		    hero.getWriter().display("You have been teleported to the spaceship!");
+		    break;
+
 		case ENFORCER:
-			// breaks a door that normally needs an opener 
+			LocationBase currentLocation1 = hero.getLocation();
+			if (!(currentLocation1 instanceof BrokenAlley)) return;
+			
+			Exit exit = currentLocation1.getExits()
+					.values()
+					.stream()
+					.filter(e -> e.getTarget() instanceof Graveyard)
+					.findFirst()
+					.orElse(null);
+			
+			if (exit == null) {
+				hero.getWriter().display("There is no locked door to force here.");
+		        break;
+			}
+			
+			exit.changeStateOpen();
+		    hero.getWriter().display("You break the door with raw force! The path to the "
+		    		+ exit.getTarget().getName()
+		    		+ " is now open.");
 			break;
 		}
 	}
