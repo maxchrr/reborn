@@ -22,6 +22,8 @@ public class StartCommand implements Command {
 				+ "Population : unknown \n"
 				+ "That's it, you feel quite anxious, thus you are more curious than ever to discover what happened.\n"
 				+ "Everyone seems to have disappear and you have one objective : find the reason and, if you can, fin them back.");
+		
+		hero.move(hero.getLocation());
 	}
 
 }

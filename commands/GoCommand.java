@@ -3,7 +3,6 @@ package commands;
 import core.Hero;
 import locations.LocationBase;
 import locations.StrangeOffice;
-import spells.Spell;
 import locations.Exit;
 
 public class GoCommand implements Command {
@@ -35,21 +34,10 @@ public class GoCommand implements Command {
 		}
 		
 		LocationBase target = exit.getTarget();
-		hero.move(target);
 		
 		hero.getWriter().display("Moving to " + target.getName());
 		hero.getWriter().display(target.getDescription());
-			
-		// Spell discovery
-		if (target.hasSpell()) {
-			Spell newSpell = target.getSpell();
-			hero.addSpell(newSpell);
-			hero.getWriter().display("You unlocked the " 
-					+ newSpell.getName()
-					+ " spell : \n"
-					+ newSpell.getDesc() 
-					+ "\n");
-		}
+		hero.move(target);
 		
 		// Special ending
 		if (target instanceof StrangeOffice) {

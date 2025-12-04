@@ -31,12 +31,12 @@ public class Main {
         
         // Initialize the World
         World world = new World();
-        LocationBase current = world.startingLocation;
+        LocationBase currentLocation = world.startingLocation;
         
         writer.debug("World ready");
         
         // Initialize the Hero on starting location
-        Hero hero = new Hero(writer, 100, 100, current, false, null);
+        Hero hero = new Hero(writer, 100, 100, currentLocation, false, null);
         
         writer.debug("Hero ready");
         

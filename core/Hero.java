@@ -71,15 +71,11 @@ public class Hero {
 	
 	/** ------ Spell management ------ */
 	
-	public void addSpell(Spell spell) {
+	public void learn(Spell spell) {
 		this.SPELLS.add(spell);
 	}
 	
 	public void cast(Spell spell) {
-		if (spell.getCost() > this.mana) {
-			Hero.writer.display("Not enough mana!");
-			return;
-		}
 		spell.action(this, spell);
 	}
 	
@@ -103,6 +99,16 @@ public class Hero {
 	
 	public void move(LocationBase location) {
 		this.currentLocation = location;
+		
+		// Ensure new line
+		this.getWriter().display(" ");
+		
+		// Spell discovery
+		if (location.hasSpell()) {
+			Spell newSpell = location.getSpell();
+			this.learn(newSpell);
+			this.getWriter().display("You unlocked the " + newSpell.getName() + " spell: " + newSpell.getDesc());
+		}
 	}
 	
 	/** ------ Constructor ------ */
