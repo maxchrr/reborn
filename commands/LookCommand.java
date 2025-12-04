@@ -34,8 +34,8 @@ public class LookCommand implements Command {
 		// Exits
 		hero.getWriter().display("Exits: ");
 		for (Exit exit : currentLocation.getExits().values()) {
-			if (!exit.isHidden()) {
-				hero.getWriter().display(" - " + exit.getTarget().getName() + ( !exit.isAccessible() ? " : locked" : ""));
+			if (exit.isAccessible()) {
+				hero.getWriter().display(" - " + exit.getTarget().getName());
 			}
 		}
 		

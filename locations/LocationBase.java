@@ -48,23 +48,11 @@ public abstract class LocationBase implements Location {
 		this.EXITS.put(target.getName().toLowerCase(), new Exit(target, state));
 	}
 	
-	public void addExit(LocationBase target, boolean accessible, boolean hidden) {
-		this.EXITS.put(target.getName().toLowerCase(), new Exit(target, accessible, hidden));
-	}
-	
 	public void openExit(LocationBase target) {
 		this.EXITS.get(target.getName().toLowerCase()).changeStateOpen();
 	}
 	
 	public void closeExit(LocationBase target) {
 		this.EXITS.get(target.getName().toLowerCase()).changeStateClosed();
-	}
-	
-	public void hideExit(LocationBase target) {
-		this.EXITS.get(target.getName().toLowerCase()).hide();
-	}
-	
-	public void showExit(LocationBase target) {
-		this.EXITS.get(target.getName().toLowerCase()).show();
 	}
 }

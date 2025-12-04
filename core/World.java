@@ -65,20 +65,20 @@ public class World {
         crossroads.addExit(street1);
         crossroads.addExit(church);
         crossroads.addExit(street2);
-        crossroads.addExit(motel, false);
+        crossroads.addExit(motel);
         
         church.addExit(crossroads);
         
         motel.addExit(crossroads);
         motel.addExit(motelEntry);
-        motel.addExit(motelRoom);
+        motel.addExit(motelRoom, false);
         
         motelEntry.addExit(motel);
         
         motelRoom.addExit(motel);
         
         street2.addExit(crossroads);
-        street2.addExit(kebab, true, true);
+        street2.addExit(kebab);
         street2.addExit(alley);
         street2.addExit(brokenAlley);
         
@@ -89,22 +89,22 @@ public class World {
         
         diner.addExit(alley);
         diner.addExit(dinerKitchen);
-        diner.addExit(strangeOffice, true, true);
+        diner.addExit(strangeOffice);
         
         dinerKitchen.addExit(diner);
         
         strangeOffice.addExit(diner);
-        strangeOffice.addExit(backrooms, true, true);
+        strangeOffice.addExit(backrooms);
         
-        backrooms.addExit(strangeOffice, false, true);
+        backrooms.addExit(strangeOffice, false);
         
         brokenAlley.addExit(street2);
-        brokenAlley.addExit(policeStation, false);
+        brokenAlley.addExit(policeStation);
         brokenAlley.addExit(graveyard, false);
         brokenAlley.addExit(park);
         
         policeStation.addExit(brokenAlley);
-        policeStation.addExit(cell);
+        policeStation.addExit(cell, false);
         
         cell.addExit(policeStation);
 
