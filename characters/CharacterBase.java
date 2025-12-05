@@ -40,10 +40,15 @@ public abstract class CharacterBase implements Character {
 		if (amount >= this.getHealth()) {
 			this.health = 0;
 			hero.getWriter().display("The " + this.getName() + " is dead.");
+			hero.getWriter().display(this.getName() + " has been defeated.");
 			return;
 		}
 		
 		this.health -= amount;
+		hero.getWriter().display("You deal "
+				+ amount
+				+ " damage to "
+				+ this.getName());
 		
 		// Fight back the hero
 		hero.delHealth(this.getBackDamage());

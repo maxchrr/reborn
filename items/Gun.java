@@ -43,11 +43,6 @@ public class Gun extends ItemBase {
 		
 		int damageAmount = 60;
 		character.damage(hero, damageAmount);
-		
-		this.delAmmo(-1);
-		hero.getWriter().display("You deal " + damageAmount + " damage to " + character.getName() + ", nice shot!");
-		if (character.getHealth() <= 0) {
-			hero.getWriter().display(character.getName() + " has been defeated.");
-		}
+		this.delAmmo(1);
 	}
 }

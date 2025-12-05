@@ -20,10 +20,6 @@ public class Sword extends ItemBase {
 		if (!hero.hasBag()) return;
 		
 		int damageAmount = 10;
-		hero.getWriter().display("You deal " + damageAmount + " damage to " + character.getName());
 		character.damage(hero, damageAmount);
-		if (character.getHealth() <= 0) {
-			hero.getWriter().display(character.getName() + " has been defeated.");
-		}
 	}
 }
