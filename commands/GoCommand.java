@@ -34,7 +34,7 @@ public class GoCommand implements Command {
 		}
 
 		if (!exit.isAccessible()) {
-			hero.getWriter().display("This issue is locked...");
+			hero.getWriter().display("This area is locked...");
 			return;
 		}
 		
@@ -47,7 +47,7 @@ public class GoCommand implements Command {
 		// Special ending
 		if (target instanceof StrangeOffice) {
 			hero.getWriter().display("You enter the locked office, everything seems untouched.\n"
-					+ "Everything looks normal until you spot something strange.\n "
+					+ "Everything looks normal until you spot something strange.\n"
 					+ "The screen is powered on, and the year displayed is 2125.\n"
 					+ "How is that possible?");
 			
