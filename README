@@ -1,0 +1,31 @@
+
+	 ____   ___   ___   ____   ____   _  _ 
+	/  _ \ ) __( \  _) / __ \ /  _ \ ) \/ (
+	)  ' / | _)  |  (  ))__(( )  ' / |  \ |
+	|_()_\ )___( /__o) \____/ |_()_\ )_()_(
+
+
+Reborn introduce the story of a soldier, traveling to a planet
+where all its inhabitants have been disappearing on occasion;
+he must understand what happened and, if he can, save as many
+people as possible.
+
+
+   Compilation & Installation
+
+This project is written in Java, you need JDK installed on your
+system to compile the whole project.
+
+Firstly, run javac to compile all java files in source directory:
+  - javac -d out $(find src -name "*.java")
+
+You have to be in the parent of source directory.
+
+Then, make the JAR file using the provided manifest:
+  - jar cfm reborn.jar manifest.mf -C out .
+
+You while find the compiled JAR in the current directory.
+
+
+   Copyright (c) 2025 Hugo Chapron, Max Charrier, Paul Ourliac.
+                    All Rights Reserved.
