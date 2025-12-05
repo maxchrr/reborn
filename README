@@ -24,8 +24,8 @@ You have to be in the parent of source directory.
 Then, make the JAR file using the provided manifest:
   - jar cfm reborn.jar manifest.mf -C out .
 
-You while find the compiled JAR in the current directory.
+You will find the compiled JAR in the current directory.
 
 
-   Copyright (c) 2025 Hugo Chapron, Max Charrier, Paul Ourliac.
-                    All Rights Reserved.
+  Copyright (c) 2025 Hugo Chapron, Max Charrier, Paul Ourliac.
+                  All Rights Reserved.
